@@ -108,6 +108,7 @@ spring.jpa.show-sql=true
 ```
 
 spring-jpa.shpw-sql is not required - but is useful to display the sql which the JPA function is using to satisy the requests being made.
+
 spring.jpa.properties.hibernate.dialect is required to ensure that the application generates SQL which can be run by DB2 
 
 
