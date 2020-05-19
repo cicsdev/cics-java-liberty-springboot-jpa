@@ -122,7 +122,6 @@ The browser will prompt for basic authentication. Enter a valid userid and passw
 
 All the rows in table EMP should be returned.
 
-The allRows request calls a method in the application which uses the application.properties file to determine which datasource definition to use. If you make the same request to REST service allRows2 then the application uses the @Bean annotated dataSource method to determine the correct dataSource. The @Bean method will use the jndiName used in dataSource t4b whereas the application.properties file will used the jndiName specified in t4a.
     
 ## Summary of all available interfaces     
 
