@@ -61,7 +61,8 @@ Ensure you have the following features in server.xml:
 Note: servlet-4.0 will only work for CICS TS V5.5 or later
 
 ### add a datasource definition to server.xml
-Add a datasource definition to your server.xml. this sample uses a type 4 connection. The application connects to this datasource by using a @Bean datasource which connects using the jndiName value jdbc/jdbcDataSource-bean
+Add a datasource definition to your server.xml. this sample uses a type 4 connection. The application connects to this datasource by using a @Bean datasource which connects using the jndiName value **jdbc/jdbcDataSource-bean**
+
 E.g. as follows:
 
 ```
