@@ -4,7 +4,7 @@
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
-        <property name="context-root" value="com.ibm.cicsdev.springboot.emp.jpa"/>
         <property name="java-output-path" value="/com.ibm.cicsdev.springboot.emp.jpa/target/classes"/>
+        <property name="context-root" value="cics-java-liberty-springboot.emp.jpa"/>
     </wb-module>
 </project-modules>
