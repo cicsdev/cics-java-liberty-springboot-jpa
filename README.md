@@ -74,7 +74,7 @@ E.g. as follows:
             </library>
         </jdbcDriver>
         <properties.db2.jcc currentSchema="DSN81110" databaseName="DSNV11P2" driverType="4" 
-	     password="<your password>" portNumber="41100" serverName="<your server name>" user="<your userid>"/>
+	     password="<your password>" portNumber="<your port number>" serverName="<your server name>" user="<your userid>"/>
 </dataSource> 
 ```
 
