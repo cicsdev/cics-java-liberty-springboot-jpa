@@ -47,14 +47,6 @@ public class EmployeeRestController {
 		return employeeService.selectAll();
 	}
 	
-//	/*
-//	 *    example url http://<server>:<port>/allRows2
-//	 */
-////	@RequestMapping("/allRows2/")
-//	@RequestMapping(value={"/allRows2","/allRows2/"})
-//	public List<Employee> getAllRows2() throws NamingException {
-//		return employeeService.selectAllUsingBeanDataSource();
-//	}
 	/*
 	 *    example url http://<server>:<port>/oneEmployee/000100
 	 */
