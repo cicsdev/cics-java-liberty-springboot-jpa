@@ -134,10 +134,6 @@ http://myzos.mycompany.com:httpPort/com.ibm.cicsdev.springboot.emp.jpa-0.1.0/all
     
   >All rows in table EMP will be returned - the datasource is obtained from the application.properties file
     
-http://myzos.mycompany.com:httpPort/com.ibm.cicsdev.springboot.emp.jpa-0.1.0/allRows2
-  
-  >All rows in table EMP will be returned - the datasource is obtained from an @Bean method
-    
 http://myzos.mycompany.com:httpPort/com.ibm.cicsdev.springboot.emp.jpa-0.1.0/addEmployee/{firstName}/{lastName}
   
   >A new employee record will be created using the first name and last name supplied. All other fields in
