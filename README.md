@@ -118,10 +118,10 @@ spring.jpa.show-sql=true
 ## Trying out the sample
 
 Find the base URL for the application in the Liberty messages.log 
-    e.g. http://myzos.mycompany.com:httpPort/com.ibm.cicsdev.springboot.emp.jpa-0.1.0.
+    e.g. http://myzos.mycompany.com:httpPort/com.ibm.cicsdev.springboot.emp.jpa.
 
 Paste the base URL along with the REST service suffix 'allRows' into the browser 
-    e.g. http://myzos.mycompany.com:httpPort/com.ibm.cicsdev.springboot.emp.jpa-0.1.0/allRows
+    e.g. http://myzos.mycompany.com:httpPort/com.ibm.cicsdev.springboot.emp.jpa/allRows
 
 The browser will prompt for basic authentication. Enter a valid userid and password - according to the configured registry for your target Liberty JVM server.
 
@@ -130,24 +130,24 @@ All the rows in table EMP should be returned.
     
 ## Summary of all available interfaces     
 
-http://myzos.mycompany.com:httpPort/com.ibm.cicsdev.springboot.emp.jpa-0.1.0/allRows
+http://myzos.mycompany.com:httpPort/com.ibm.cicsdev.springboot.emp.jpa/allRows
     
   >All rows in table EMP will be returned - the datasource is obtained from the application.properties file
     
-http://myzos.mycompany.com:httpPort/com.ibm.cicsdev.springboot.emp.jpa-0.1.0/addEmployee/{firstName}/{lastName}
+http://myzos.mycompany.com:httpPort/com.ibm.cicsdev.springboot.emp.jpa/addEmployee/{firstName}/{lastName}
   
   >A new employee record will be created using the first name and last name supplied. All other fields in
   the table will be set by the application to the same values by this demo application.
   If successful the employee number created will be returned.
     
-http://myzos.mycompany.com:httpPort/com.ibm.cicsdev.springboot.emp.jpa-0.1.0/oneEmployee/{empno}
+http://myzos.mycompany.com:httpPort/com.ibm.cicsdev.springboot.emp.jpa/oneEmployee/{empno}
   
   >A single employee record will be displayed if it exists.
     
-http://myzos.mycompany.com:httpPort/com.ibm.cicsdev.springboot.emp.jpa-0.1.0/updateEmployee/{empNo}/{newSalary}
+http://myzos.mycompany.com:httpPort/com.ibm.cicsdev.springboot.emp.jpa/updateEmployee/{empNo}/{newSalary}
   >The employee record will be updated with the salary amount specified.
     
-http://myzos.mycompany.com:httpPort/com.ibm.cicsdev.springboot.emp.jpa-0.1.0/deleteEmployee/{empNo}
+http://myzos.mycompany.com:httpPort/com.ibm.cicsdev.springboot.emp.jpa/deleteEmployee/{empNo}
   
   >The employee record with the empNo specified will be deleted if it exists
 
