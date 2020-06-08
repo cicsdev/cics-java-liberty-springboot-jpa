@@ -13,10 +13,10 @@
   </parent>
 
   <!-- Application properties -->
-  <groupId>com.ibm.cicsdev</groupId>
-  <artifactId>com.ibm.cicsdev.springboot.emp.jpa</artifactId>
+  <groupId>com.ibm.cicsdev.springboot</groupId>
+  <artifactId>cics-java-liberty-springboot-jpa</artifactId>
   <version>0.1.0</version>   
-  <name>com.ibm.cicsdev.springboot.emp.jpa</name>
+  <name>cics-java-liberty-springboot.jpa</name>
   <description>Demo JPA project for Spring Boot</description>
   <properties>
     <java.version>1.8</java.version>
