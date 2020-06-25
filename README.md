@@ -170,25 +170,24 @@ spring.jpa.show-sql=true
    The `allRows` request calls a method in the application which uses the `application.properties` file to determine which dataSource definition to use. If you make the same request to REST service `/allRows2` then the application uses the `@Bean` annotated dataSource method to determine the correct dataSource. The `@Bean` method will use the `jndiName` value specified in dataSource `t4b` whereas the `application.properties` file will used the `jndiName` value specified in `t4a`.
     
 ## Summary of all available interfaces     
+- `http://myzos.mycompany.com:httpPort/com.ibm.cicsdev.springboot.emp.jpa/allRows`
 
-- `http://myzos.mycompany.com:httpPort/com.ibm.cicsdev.springboot.emp.jpa/allRows
-    
   >All rows in table EMP will be returned - the datasource is obtained from the application.properties file
-    
-- `http://myzos.mycompany.com:httpPort/com.ibm.cicsdev.springboot.emp.jpa/addEmployee/{firstName}/{lastName}
+
+- `http://myzos.mycompany.com:httpPort/com.ibm.cicsdev.springboot.emp.jpa/addEmployee/{firstName}/{lastName}`
   
   >A new employee record will be created using the first name and last name supplied. All other fields in
   the table will be set by the application to the same values by this demo application.
   If successful the employee number created will be returned.
     
-- `http://myzos.mycompany.com:httpPort/com.ibm.cicsdev.springboot.emp.jpa/oneEmployee/{empno}
+- `http://myzos.mycompany.com:httpPort/com.ibm.cicsdev.springboot.emp.jpa/oneEmployee/{empno}`
   
   >A single employee record will be displayed if it exists.
     
-- `http://myzos.mycompany.com:httpPort/com.ibm.cicsdev.springboot.emp.jpa/updateEmployee/{empNo}/{newSalary}
+- `http://myzos.mycompany.com:httpPort/com.ibm.cicsdev.springboot.emp.jpa/updateEmployee/{empNo}/{newSalary}`
   >The employee record will be updated with the salary amount specified.
     
-- `http://myzos.mycompany.com:httpPort/com.ibm.cicsdev.springboot.emp.jpa/deleteEmployee/{empNo}
+- `http://myzos.mycompany.com:httpPort/com.ibm.cicsdev.springboot.emp.jpa/deleteEmployee/{empNo}`
   
   >The employee record with the empNo specified will be deleted if it exists
 
