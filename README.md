@@ -123,7 +123,7 @@ E.g. as follows:
 	     password="<your password>" portNumber="<your port number>" serverName="<your server name>" user="<your userid>"/>
 </dataSource> 
 ```
-## application.properties file
+### update application.properties 
 
 this file contains the following entries 
 
@@ -154,9 +154,6 @@ spring.jpa.show-sql=true
      </application-bnd>  
    </application>
 ```
-
-
-## Trying out the sample
 
 ## Trying out the sample
 1. Ensure the web application started successfully in Liberty by checking for msg `CWWKT0016I` in the Liberty messages.log:
