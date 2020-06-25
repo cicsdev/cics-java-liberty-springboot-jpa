@@ -22,14 +22,33 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
+/**
+ * @author Tony Fitzgerald
+ * 
+ * jpa repository defintion
+ *
+ */
 public interface EmployeeRepository extends CrudRepository<Emp, String> {
 
-	 public Emp findByEmpNo(String empNo); 
-	 
-	 @Modifying
-	 @Query("update Emp e set e.salary = ?2 where e.empNo = ?1")
-	 public int setNewSalary(String empNo, long newSalary);
+	/**
+	 * @param empNo
+	 * @return employees with employee number empNo 
+	 */
+	public Emp findByEmpNo(String empNo); 
 
+	/**
+	 * @param empNo
+	 * @param newSalary
+	 * @return integer
+	 */
+	@Modifying
+	@Query("update Emp e set e.salary = ?2 where e.empNo = ?1")
+	public int setNewSalary(String empNo, long newSalary);
+
+	/**
+	 * @param employeeToUpdate
+	 * @return one employee 
+	 */
 	public Emp getOne(String employeeToUpdate);
-	
+
 }

@@ -26,11 +26,18 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+/**
+ * @author Tony Fitzgerald
+ *
+ */
 @Service
 public class EmployeeService {
 	@Autowired
 	private EmployeeRepository employeeRepository;
 	
+	/**
+	 * @return a list of employees (all employees in the table EMP)
+	 */
 	public List<Emp> selectAll() {
 		System.out.println("selectAll: EmployeeService");
 		List<Emp> employees = new ArrayList<>();  //define a new list
@@ -41,6 +48,10 @@ public class EmployeeService {
 
 	}
 
+	/**
+	 * @param empNo
+	 * @return a list of employees with the employee number specified
+	 */
 	public Optional<Emp> selectWhereEmpno(String empNo) {
 		/*
 		 * Return all rows for a specific employee number
@@ -50,12 +61,17 @@ public class EmployeeService {
 	}
 
 
+	/**
+	 * @param fName - employee first name
+	 * @param lName - employee last name
+	 * @return a message indicating the result of adding an employee record
+	 */
 	public String addEmployee(String fName, String lName) {
 		/*
 		 *  Add a new employee.
 		 *      Firstname and lastname are passed in 
 		 *      
-		 *      for demo purposes all the other fields are set by this method
+		 *      for demonstration purposes all the other fields are set by this method
 		 *      
 		 */
 
@@ -92,6 +108,10 @@ public class EmployeeService {
 	}
 
 
+	/**
+	 * @param empNo
+	 * @return a message indicating the result of deleting an employee record
+	 */
 	public String deleteEmployee(String empNo)	{
 		/*
 		 *  Delete an employee based on the empNo passed in
@@ -108,6 +128,11 @@ public class EmployeeService {
 	}
 
 
+	/**
+	 * @param employeeToUpdate
+	 * @param newSalary
+	 * @return a message indicating the result of updating an employee record
+	 */
 	public String updateEmployee(String employeeToUpdate, long newSalary) {
 		/*
 		 * Update a specified employee's salary based on the empNo passed to the salary passed in.
@@ -134,6 +159,10 @@ public class EmployeeService {
 	}		
 		
 		
+	/**
+	 * @param empNo
+	 * @return an employee record based on the employee number passed 
+	 */
 	public Emp selectWhereEmpno1(String empNo) {
 		return employeeRepository.findByEmpNo(empNo);
 	}

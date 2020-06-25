@@ -32,6 +32,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 
+/**
+ * @author Tony Fitzgerald
+ * 
+ * Rest controller class - processes all REST requests for the application
+ *
+ */
 @RestController
 public class EmployeeRestController {
 	/*    
@@ -45,7 +51,9 @@ public class EmployeeRestController {
 	@Autowired  
 	private EmployeeService employeeService;
 
-	// Simple endpoint - returns date and time - simple test of the application
+	/**
+	 * @return message containing data and time - simple test of the application
+	 */
 	@RequestMapping("/") 
 	@ResponseBody
 	public String Index()
@@ -56,8 +64,11 @@ public class EmployeeRestController {
 		return "Hello from employee service controller (EMP JPA Application). Date/Time: " + myDateString;
 	}
 	
-	/*
-	 *    example url http://<server>:<port>/allRows
+	/**
+	 * @return all rows in table EMP
+	 * @throws NamingException
+	 * 
+	 * example url http://<server>:<port>/allRows
 	 */
 	@RequestMapping(value={"/allRows","/allRows/"})
 	public List<Emp> getAllRows() throws NamingException {
@@ -65,16 +76,25 @@ public class EmployeeRestController {
 		return employeeService.selectAll();
 	}
 	
-	/*
-	 *    example url http://<server>:<port>/oneEmployee/000100
+	/**
+	 * @param empno
+	 * @return a single employee based on the employee number passed in
+	 * 
+	 *  example url http://<server>:<port>/oneEmployee/000100
+	 *  
 	 */
 	@RequestMapping("/oneEmployee/{empno}")
 	public Optional<Emp> oneEmployee(@PathVariable String empno) {
 		return employeeService.selectWhereEmpno(empno);
 	}
 	
-	/*
-	 *    example url http://<server>:<port>/addEmployee/Tony/Fitzgerald
+	/**
+	 * @param firstName
+	 * @param lastName
+	 * @return a message indicating the result of adding an employee record
+	 * 
+	 * example url http://<server>:<port>/addEmployee/Tony/Fitzgerald
+	 * 
 	 */
 	@RequestMapping("/addEmployee/{firstName}/{lastName}")
 	@ResponseBody
@@ -83,8 +103,12 @@ public class EmployeeRestController {
 		return result;
 	}
 	
-	/*
-	 *    example url http://<server>:<port>/deleteEmployee/368620
+	/**
+	 * @param empNo
+	 * @return a message indicating the result of deleting an employee record
+	 * 
+	 *  example url http://<server>:<port>/deleteEmployee/368620
+	 *  
 	 */
 	@RequestMapping("/deleteEmployee/{empNo}")
 	@ResponseBody
@@ -93,8 +117,13 @@ public class EmployeeRestController {
 		return result;
 	}
 	
-	/*
-	 *  example url http://<server>:<port>/updateEmployee/368620/33333
+	/**
+	 * @param empNo
+	 * @param newSalary
+	 * @return a message indicating the result of updating an employee record
+	 * 
+	 * example url http://<server>:<port>/updateEmployee/368620/33333
+	 * 
 	 */
 	@RequestMapping("/updateEmployee/{empNo}/{newSalary}")
 	@ResponseBody

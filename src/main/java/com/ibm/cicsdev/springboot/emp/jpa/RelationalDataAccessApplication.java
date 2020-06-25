@@ -24,12 +24,18 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 
+/**
+ * @author Tony Fitzgerald
+ *
+ */
 @SpringBootApplication
 @ServletComponentScan
 public class RelationalDataAccessApplication extends SpringBootServletInitializer  {
 	
+	/**
+	 * @param args
+	 */
 	public static void main(String args[]) {
-		System.out.println(">>> starting application Employee");
 		SpringApplication.run(RelationalDataAccessApplication.class, args);
 	}
 	
