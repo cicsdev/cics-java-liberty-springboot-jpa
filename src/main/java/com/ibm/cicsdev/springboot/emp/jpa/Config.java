@@ -27,12 +27,18 @@ import org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * @author Tony Fitzgerald
+ *
+ */
 @Configuration
 public class Config {
 	// name the dataSource jndi name
 	private static final String DATA_SOURCE = "jdbc/jdbcDataSource-bean";
 
-	//set the DataSource the application will use
+	/**
+	 * @return set the DataSource the application will use
+	 */
 	@Bean
 	public DataSource dataSource() {			
 		try {
@@ -45,7 +51,12 @@ public class Config {
 		}
 	} 
 	
-	//spring.jpa.hibernate.naming.physical-strategy=org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+	/**
+	 * @return new PhysicalNamingStrategyStandardImpl();
+	 * 
+	 * spring.jpa.hibernate.naming.physical-strategy=org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+	 * 
+	 */
 	@Bean
 	public PhysicalNamingStrategy physical() {
 	    return new PhysicalNamingStrategyStandardImpl();
