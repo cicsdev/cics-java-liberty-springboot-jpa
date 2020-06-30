@@ -23,11 +23,10 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 /**
- * @author Tony Fitzgerald
- * 
- * object representation of EMP table
+ * class representing the EMP table
  *
  */
+
 @Entity
 public class Emp {
 	

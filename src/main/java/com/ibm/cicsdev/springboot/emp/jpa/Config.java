@@ -28,8 +28,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @author Tony Fitzgerald
- *
+ * Configuration class - used to create DataSource bean 
+ *    and a Bean to set property spring.jpa.hibernate.naming.physical-strategy
  */
 @Configuration
 public class Config {

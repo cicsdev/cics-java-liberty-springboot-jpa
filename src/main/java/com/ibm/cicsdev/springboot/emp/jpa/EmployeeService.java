@@ -27,13 +27,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * @author Tony Fitzgerald
+ * Service class which retrieves the data requested by the REST controller
  * 
- * Service method which retrieves the data requested by the REST controller
- *
+ * @Autowired Marks a constructor, field, setter method, or config method as to be autowired by Spring's dependency injection facilities
+ * @Service MArks a class as providing business logic
  */
+
 @Service
 public class EmployeeService {
+	
 	@Autowired
 	private EmployeeRepository employeeRepository;
 	

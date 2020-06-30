@@ -31,22 +31,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-
 /**
- * @author Tony Fitzgerald
+ * REST controller used to direct incoming requests to the correct business service.
  * 
- * Rest controller class - processes all REST requests for the application
- *
+ * @RestController: build a Restful controller
+ * @Autowired: drive Dependency Injection
+ * @GetMapping: Annotation for mapping HTTP GET requests onto specific handler methods. 
  */
+
 @RestController
 public class EmployeeRestController {
-	/*    
-	 *  REST controller used to direct incoming requests to the correct business service.
-	 *  
-	 *  In a real world application some of these functions would most likely be done by a POST
-	 *    request. For simplicity all requests to this sample application are done with a GET request
-	 *    
-	 */
 
 	@Autowired  
 	private EmployeeService employeeService;
