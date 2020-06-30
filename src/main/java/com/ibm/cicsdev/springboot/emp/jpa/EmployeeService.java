@@ -30,7 +30,7 @@ import org.springframework.stereotype.Service;
  * Service class which retrieves the data requested by the REST controller
  * 
  * @Autowired Marks a constructor, field, setter method, or config method as to be autowired by Spring's dependency injection facilities
- * @Service MArks a class as providing business logic
+ * @Service Marks a class as providing business logic
  */
 
 @Service
