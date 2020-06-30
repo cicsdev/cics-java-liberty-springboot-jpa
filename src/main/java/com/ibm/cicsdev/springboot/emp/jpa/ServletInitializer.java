@@ -10,36 +10,13 @@
 
 package com.ibm.cicsdev.springboot.emp.jpa;
 
-import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
-/**
- * 
- * jpa repository definition
- *
- */
-public interface EmployeeRepository extends CrudRepository<Emp, String> {
+public class ServletInitializer extends SpringBootServletInitializer {
 
-	/**
-	 * @param empNo
-	 * @return employees with employee number empNo 
-	 */
-	public Emp findByEmpNo(String empNo); 
-
-	/**
-	 * @param empNo
-	 * @param newSalary
-	 * @return integer
-	 */
-	@Modifying
-	@Query("update Emp e set e.salary = ?2 where e.empNo = ?1")
-	public int setNewSalary(String empNo, long newSalary);
-
-	/**
-	 * @param employeeToUpdate
-	 * @return one employee 
-	 */
-	public Emp getOne(String employeeToUpdate);
-
+	@Override
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+		return application.sources(Application.class);
+	}
 }
