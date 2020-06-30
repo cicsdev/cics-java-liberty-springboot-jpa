@@ -30,13 +30,13 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
  */
 @SpringBootApplication
 @ServletComponentScan
-public class RelationalDataAccessApplication extends SpringBootServletInitializer  {
+public class Application extends SpringBootServletInitializer  {
 	
 	/**
 	 * @param args
 	 */
 	public static void main(String args[]) {
-		SpringApplication.run(RelationalDataAccessApplication.class, args);
+		SpringApplication.run(Application.class, args);
 	}
 	
 

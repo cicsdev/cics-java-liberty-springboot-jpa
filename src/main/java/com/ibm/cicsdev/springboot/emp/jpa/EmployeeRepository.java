@@ -25,7 +25,7 @@ import org.springframework.data.repository.CrudRepository;
 /**
  * @author Tony Fitzgerald
  * 
- * jpa repository defintion
+ * jpa repository definition
  *
  */
 public interface EmployeeRepository extends CrudRepository<Emp, String> {

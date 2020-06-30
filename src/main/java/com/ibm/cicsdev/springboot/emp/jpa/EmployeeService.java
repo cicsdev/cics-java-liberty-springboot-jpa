@@ -28,6 +28,8 @@ import org.springframework.stereotype.Service;
 
 /**
  * @author Tony Fitzgerald
+ * 
+ * Service method which retrieves the data requested by the REST controller
  *
  */
 @Service
