@@ -27,7 +27,7 @@ import javax.naming.NamingException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -54,7 +54,7 @@ public class EmployeeRestController {
 	/**
 	 * @return message containing data and time - simple test of the application
 	 */
-	@RequestMapping("/") 
+	@GetMapping("/") 
 	@ResponseBody
 	public String Index()
 	{    
@@ -70,7 +70,7 @@ public class EmployeeRestController {
 	 * 
 	 * example url http://<server>:<port>/allRows
 	 */
-	@RequestMapping(value={"/allRows","/allRows/"})
+	@GetMapping({"/allRows","/allRows/"})
 	public List<Emp> getAllRows() throws NamingException {
 		System.out.println("getAllRows :EmployeeRESTController");
 		return employeeService.selectAll();
@@ -83,7 +83,7 @@ public class EmployeeRestController {
 	 *  example url http://<server>:<port>/oneEmployee/000100
 	 *  
 	 */
-	@RequestMapping("/oneEmployee/{empno}")
+	@GetMapping("/oneEmployee/{empno}")
 	public Optional<Emp> oneEmployee(@PathVariable String empno) {
 		return employeeService.selectWhereEmpno(empno);
 	}
@@ -96,7 +96,7 @@ public class EmployeeRestController {
 	 * example url http://<server>:<port>/addEmployee/Tony/Fitzgerald
 	 * 
 	 */
-	@RequestMapping("/addEmployee/{firstName}/{lastName}")
+	@GetMapping("/addEmployee/{firstName}/{lastName}")
 	@ResponseBody
 	public String addEmp(@PathVariable String firstName , @PathVariable String lastName) {
 		String result = employeeService.addEmployee(firstName,lastName);
@@ -110,7 +110,7 @@ public class EmployeeRestController {
 	 *  example url http://<server>:<port>/deleteEmployee/368620
 	 *  
 	 */
-	@RequestMapping("/deleteEmployee/{empNo}")
+	@GetMapping("/deleteEmployee/{empNo}")
 	@ResponseBody
 	public String delEmployee(@PathVariable String empNo) {
 		String result = employeeService.deleteEmployee(empNo);
@@ -125,7 +125,7 @@ public class EmployeeRestController {
 	 * example url http://<server>:<port>/updateEmployee/368620/33333
 	 * 
 	 */
-	@RequestMapping("/updateEmployee/{empNo}/{newSalary}")
+	@GetMapping("/updateEmployee/{empNo}/{newSalary}")
 	@ResponseBody
 	public String updateEmp(@PathVariable String empNo, @PathVariable long newSalary) {
 		//Emp empToUpd = employeeService.selectWhereEmpno1(empNo);
