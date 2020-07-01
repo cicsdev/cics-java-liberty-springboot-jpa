@@ -106,7 +106,7 @@ This creates a WAR file in the `target` directory.
 
 >**Note:** `servlet-4.0` will only work for CICS TS V5.5 or later
 
-- add a datasource definition to server.xml. This sample uses a type 2 connection. The application connects to this datasource by using a @Bean datasource which connects using the jndiName value `jdbc/jdbcDataSource-bean`
+- add a datasource definition to 'server.xml'. This sample uses a type 2 connection. The application connects to this datasource by using a @Bean datasource which connects using the jndiName value `jdbc/jdbcDataSource-bean`
 
 E.g. as follows:
 
