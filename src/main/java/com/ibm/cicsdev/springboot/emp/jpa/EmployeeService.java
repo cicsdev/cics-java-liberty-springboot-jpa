@@ -28,6 +28,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class EmployeeService {
 	
+	private LocalDate today = LocalDate.now();
+	
 	@Autowired
 	private EmployeeRepository employeeRepository;
 	
@@ -80,7 +82,7 @@ public class EmployeeService {
 		String midInit = "A";
 		String workdept = "E21";
 		String phoneNo = "1234";
-		LocalDate today = LocalDate.now();
+		
 		String hireDate = today.toString();
 				
 		String job = "Engineer";
