@@ -113,7 +113,7 @@ E.g. as follows:
 
 ``` XML
 <dataSource id="t2a" jndiName="jdbc/jdbcDataSource-bean" transactional="false">
-        <jdbcDriver>
+        <jdbcDriver>   
             <library name="DB2LIB">
                 <fileset dir="/usr/lpp/db2v11/jdbc/classes" includes="db2jcc4.jar db2jcc_license_cisuz.jar"/>
                 <fileset dir="/usr/lpp/db2v11/jdbc/lib" includes="libdb2jcct2zos4_64.so"/>
