@@ -107,22 +107,25 @@ This creates a WAR file inside the `target` directory.
 >**Note:** `servlet-4.0` will only work for CICS TS V5.5 or later
 
 - add a datasource definition to server.xml
-this sample uses a type 4 connection. The application connects to this datasource by using a @Bean datasource which connects using the jndiName value `jdbc/jdbcDataSource-bean`
+this sample uses a type 2 connection. The application connects to this datasource by using a @Bean datasource which connects using the jndiName value `jdbc/jdbcDataSource-bean`
 
 E.g. as follows:
 
 ``` XML
-<dataSource id="t4" jndiName="jdbc/jdbcDataSource-bean" type="javax.sql.DataSource">
+<dataSource id="t2a" jndiName="jdbc/jdbcDataSource-bean" transactional="false">
         <jdbcDriver>
             <library name="DB2LIB">
                 <fileset dir="/usr/lpp/db2v11/jdbc/classes" includes="db2jcc4.jar db2jcc_license_cisuz.jar"/>
-                <fileset dir="/usr/lpp/db2v11/jdbc/lib"/>
+                <fileset dir="/usr/lpp/db2v11/jdbc/lib" includes="libdb2jcct2zos4_64.so"/>
             </library>
         </jdbcDriver>
-        <properties.db2.jcc currentSchema="DSN81110" databaseName="DSNV11P2" driverType="4" 
-	     password="<your password>" portNumber="<your port number>" serverName="<your server name>" user="<your userid>"/>
-</dataSource> 
+        <properties.db2.jcc currentSchema="DSN81110" driverType="2"/>
+        <connectionManager agedTimeout="0"/>
+    </dataSource>
 ```
+
+Your CICS region will also require an active connection to Db2 using a CICS DB2CONN resource.
+  
 ### update application.properties 
 
 this file contains the following entries 
