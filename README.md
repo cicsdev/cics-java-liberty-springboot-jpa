@@ -1,4 +1,4 @@
-# cics-java-liberty-springboot-emp-jpa
+# cics-java-liberty-springboot-jpa
 
 This project demonstrates a Spring Boot application, which uses Spring Data JPA, integrated with IBM CICS that can be deployed to a CICS Liberty JVM server. The application makes use of the employee sample table supplied with Db2 for z/OS. The application allows you to add, update, delete or display employee information from the table EMP.
 
@@ -8,7 +8,7 @@ This project demonstrates a Spring Boot application, which uses Spring Data JPA,
 * A configured Liberty JVM server
 * Java SE 1.8 or later on the z/OS system
 * Java SE 1.8 or later on the workstation
-* Either Gradle or Apache Maven on the workstation
+* Either Gradle or Apache Maven on the workstation (optional if using Wrappers)
 * IBM Db2 V11 or later on z/OS
 
 ## Downloading
@@ -102,16 +102,16 @@ This creates a WAR file in the `target` directory.
     - `<servlet-3.1>` or `<servlet-4.0>` depending on the version of Java EE in use.  
     - `<cicsts:security-1.0>` if CICS security is enabled.
     - `<jsp-2.3>`
-    - `<jdbc-4.0>`
+    - `<jdbc-4.0>` or `jdbc-4.1>`
 
 >**Note:** `servlet-4.0` will only work for CICS TS V5.5 or later
 
-- add a datasource definition to 'server.xml'. This sample uses a type 2 connection. The application connects to this datasource by using a @Bean datasource which connects using the jndiName value `jdbc/jdbcDataSource-bean`
+- add a dataSource definition to 'server.xml'. This sample uses a type 2 connection. The application connects to this dataSource by using a @Bean DataSource which connects using the jndiName value `jdbc/jdbcDataSource-bean`
 
 E.g. as follows:
 
 ``` XML
-<dataSource id="t2a" jndiName="jdbc/jdbcDataSource-bean" transactional="false">
+<dataSource id="t2a" jndiName="jdbc/jdbcDataSource" transactional="false">
         <jdbcDriver>   
             <library name="DB2LIB">
                 <fileset dir="/usr/lpp/db2v11/jdbc/classes" includes="db2jcc4.jar db2jcc_license_cisuz.jar"/>
@@ -134,9 +134,9 @@ spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.DB2390Dialect
 spring.jpa.show-sql=true
 ```
 
-*spring-jpa.show-sql* is not required, but is useful to display the sql which the JPA function is using to satisy the requests being made.
+*spring-jpa.show-sql* is not required, but is useful to display the sql which the JPA function is using to satisfy the requests being made.
 
-*spring.jpa.properties.hibernate.dialect* is required to ensure that the application generates SQL which can be run by DB2 
+*spring.jpa.properties.hibernate.dialect* is required to ensure that the application generates SQL which can be run by Db2 
 
 
 - Deployment option 1:
@@ -146,8 +146,8 @@ spring.jpa.show-sql=true
     - Manually upload the WAR file to zFS and add an `<application>` element to the Liberty server.xml to define the web application with access to all authenticated users. For example the following application element can be used to install a WAR, and grant access to all authenticated users if security is enabled.
 
 ``` XML
-   <application id="com.ibm.cicsdev.springboot.emp.jpa-0.1.0"  
-     location="${server.config.dir}/springapps/com.ibm.cicsdev.springboot.emp.jpa-0.1.0.war"  
+   <application id="com.ibm.cicsdev.springboot.jpa-0.1.0"  
+     location="${server.config.dir}/springapps/com.ibm.cicsdev.springboot.jpa-0.1.0.war"  
      name="com.ibm.cicsdev.springboot.jpa-0.1.0" type="war">
      <application-bnd>
         <security-role name="cicsAllAuthenticated">
@@ -159,11 +159,11 @@ spring.jpa.show-sql=true
 
 ## Trying out the sample
 1. Ensure the web application started successfully in Liberty by checking for msg `CWWKT0016I` in the Liberty messages.log:
-    - `A CWWKT0016I: Web application available (default_host): http://myzos.mycompany.com:httpPort/cics-java-liberty-springboot-emp-jpa-0.1.0`
-    - `I SRVE0292I: Servlet Message - [com.ibm.cicsdev.springboot.emp.jpa-0.1.0]:.Initializing Spring embedded WebApplicationContext`
+    - `A CWWKT0016I: Web application available (default_host): http://myzos.mycompany.com:httpPort/cics-java-liberty-springboot-jpa-0.1.0`
+    - `I SRVE0292I: Servlet Message - [com.ibm.cicsdev.springboot.jpa-0.1.0]:.Initializing Spring embedded WebApplicationContext`
 
 2. Copy the context root from message CWWKT0016I along with the REST service suffix into you web browser. For example display all the rows from the EMP table:
-    - `http://myzos.mycompany.com:httpPort/cics-java-liberty-springboot-emp.jpa-0.1.0/allRows` 
+    - `http://myzos.mycompany.com:httpPort/cics-java-liberty-springboot-jpa-0.1.0/allRows` 
 
    The browser will prompt for basic authentication. Enter a valid userid and password - according to the configured registry for your target Liberty JVM server.
 
@@ -172,24 +172,24 @@ spring.jpa.show-sql=true
    The `allRows` request calls a method in the application which uses the `application.properties` file to determine which dataSource definition to use. If you make the same request to REST service `/allRows2` then the application uses the `@Bean` annotated dataSource method to determine the correct dataSource. The `@Bean` method will use the `jndiName` value specified in dataSource `t4b` whereas the `application.properties` file will used the `jndiName` value specified in `t4a`.
     
 ## Summary of all available interfaces     
-- `http://myzos.mycompany.com:httpPort/com.ibm.cicsdev.springboot.emp.jpa/allRows`
+- `http://myzos.mycompany.com:httpPort/com.ibm.cicsdev.springboot.jpa/allRows`
 
-  >All rows in table EMP will be returned - the datasource is obtained from the application.properties file
+  >All rows in table EMP will be returned - the dataSource is obtained from the application.properties file
 
-- `http://myzos.mycompany.com:httpPort/com.ibm.cicsdev.springboot.emp.jpa/addEmployee/{firstName}/{lastName}`
+- `http://myzos.mycompany.com:httpPort/com.ibm.cicsdev.springboot.jpa/addEmployee/{firstName}/{lastName}`
   
   >A new employee record will be created using the first name and last name supplied. All other fields in
   the table will be set by the application to the same values by this demo application.
   If successful the employee number created will be returned.
     
-- `http://myzos.mycompany.com:httpPort/com.ibm.cicsdev.springboot.emp.jpa/oneEmployee/{empno}`
+- `http://myzos.mycompany.com:httpPort/com.ibm.cicsdev.springboot.jpa/oneEmployee/{empno}`
   
   >A single employee record will be displayed if it exists.
     
-- `http://myzos.mycompany.com:httpPort/com.ibm.cicsdev.springboot.emp.jpa/updateEmployee/{empNo}/{newSalary}`
+- `http://myzos.mycompany.com:httpPort/com.ibm.cicsdev.springboot.jpa/updateEmployee/{empNo}/{newSalary}`
   >The employee record will be updated with the salary amount specified.
     
-- `http://myzos.mycompany.com:httpPort/com.ibm.cicsdev.springboot.emp.jpa/deleteEmployee/{empNo}`
+- `http://myzos.mycompany.com:httpPort/com.ibm.cicsdev.springboot.jpa/deleteEmployee/{empNo}`
   
   >The employee record with the empNo specified will be deleted if it exists
 

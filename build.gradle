@@ -9,7 +9,7 @@ plugins
 }
 
 group = 'com.ibm.cicsdev.springboot'
-archivesBaseName='com.ibm.cicsdev.springboot.jpa'
+archivesBaseName='cics-java-liberty-springboot-jpa'
 version = '0.1.0'
 sourceCompatibility = '1.8'
 
@@ -36,12 +36,6 @@ dependencies
 
     // Don't include TomCat in the runtime build, but do put it in WEB-INF so it can be run standalone a well as embedded
     providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
-
-    // CICS BOM (as of May 2020)
-    compileOnly enforcedPlatform("com.ibm.cics:com.ibm.cics.ts.bom:5.5-20200519131930-PH25409")
-
-    // Don't include JCICS in the final build (no need for version because we have BOM)
-    compileOnly("com.ibm.cics:com.ibm.cics.server")          
 
     // Spring JPA Support    
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")

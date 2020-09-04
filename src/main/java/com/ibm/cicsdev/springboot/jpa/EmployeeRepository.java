@@ -8,7 +8,7 @@
 /* restricted by GSA ADP Schedule Contract with IBM Corp                  */
 /*                                                                        */
 
-package com.ibm.cicsdev.springboot.emp.jpa;
+package com.ibm.cicsdev.springboot.jpa;
 
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -19,8 +19,8 @@ import org.springframework.data.repository.CrudRepository;
  * jpa repository definition
  *
  */
-public interface EmployeeRepository extends CrudRepository<Emp, String> {
-
+public interface EmployeeRepository extends CrudRepository<Emp, String> 
+{
 	/**
 	 * @param empNo
 	 * @return employees with employee number empNo 

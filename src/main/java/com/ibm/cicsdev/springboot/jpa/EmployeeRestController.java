@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-package com.ibm.cicsdev.springboot.emp.jpa;
+package com.ibm.cicsdev.springboot.jpa;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -40,8 +40,8 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RestController
-public class EmployeeRestController {
-
+public class EmployeeRestController 
+{
 	@Autowired  
 	private EmployeeService employeeService;
 
@@ -65,7 +65,8 @@ public class EmployeeRestController {
 	 * example url http://<server>:<port>/allRows
 	 */
 	@GetMapping({"/allRows","/allRows/"})
-	public List<Emp> getAllRows() throws NamingException {
+	public List<Emp> getAllRows() throws NamingException 
+	{
 		System.out.println("getAllRows :EmployeeRESTController");
 		return employeeService.selectAll();
 	}
@@ -78,7 +79,8 @@ public class EmployeeRestController {
 	 *  
 	 */
 	@GetMapping("/oneEmployee/{empno}")
-	public Optional<Emp> oneEmployee(@PathVariable String empno) {
+	public Optional<Emp> oneEmployee(@PathVariable String empno) 
+	{
 		return employeeService.selectWhereEmpno(empno);
 	}
 	
@@ -92,7 +94,8 @@ public class EmployeeRestController {
 	 */
 	@GetMapping("/addEmployee/{firstName}/{lastName}")
 	@ResponseBody
-	public String addEmp(@PathVariable String firstName , @PathVariable String lastName) {
+	public String addEmp(@PathVariable String firstName , @PathVariable String lastName) 
+	{
 		String result = employeeService.addEmployee(firstName,lastName);
 		return result;
 	}
@@ -106,7 +109,8 @@ public class EmployeeRestController {
 	 */
 	@GetMapping("/deleteEmployee/{empNo}")
 	@ResponseBody
-	public String delEmployee(@PathVariable String empNo) {
+	public String delEmployee(@PathVariable String empNo) 
+	{
 		String result = employeeService.deleteEmployee(empNo);
 		return result;
 	}
@@ -121,7 +125,8 @@ public class EmployeeRestController {
 	 */
 	@GetMapping("/updateEmployee/{empNo}/{newSalary}")
 	@ResponseBody
-	public String updateEmp(@PathVariable String empNo, @PathVariable long newSalary) {
+	public String updateEmp(@PathVariable String empNo, @PathVariable long newSalary) 
+	{
 		//Emp empToUpd = employeeService.selectWhereEmpno1(empNo);
 		
 		String result = employeeService.updateEmployee(empNo, newSalary);

@@ -8,13 +8,10 @@
 /* restricted by GSA ADP Schedule Contract with IBM Corp                  */
 /*                                                                        */
 
-package com.ibm.cicsdev.springboot.emp.jpa;
+package com.ibm.cicsdev.springboot.jpa;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.web.servlet.ServletComponentScan;
-import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
-
 
 /**
  * 
@@ -27,12 +24,11 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
  *   @Configuration: allow to register extra beans in the context or import additional configuration classes
  * 
  */
-
 @SpringBootApplication
-public class Application {
-	
-	public static void main(String args[]) {
+public class Application 
+{	
+	public static void main(String args[]) 
+	{
 		SpringApplication.run(Application.class, args);
 	}
-
 }

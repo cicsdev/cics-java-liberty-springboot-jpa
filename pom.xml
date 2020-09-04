@@ -14,33 +14,15 @@
 
   <!-- Application properties -->
   <groupId>com.ibm.cicsdev.springboot</groupId>
-  <artifactId>cics-java-liberty-springboot-emp-jpa</artifactId>
+  <artifactId>cics-java-liberty-springboot-jpa</artifactId>
   <version>0.1.0</version>   
-  <name>cics-java-liberty-springboot.emp.jpa</name>
+  <name>cics-java-liberty-springboot.jpa</name>
   <description>Demo JPA project for Spring Boot</description>
   <properties>
     <java.version>1.8</java.version>
   </properties>
-
-  <!-- CICS BOM (as of MAy 2020) -->
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>com.ibm.cics</groupId>
-        <artifactId>com.ibm.cics.ts.bom</artifactId>
-        <version>5.5-20200519131930-PH25409</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
-    
+   
   <dependencies>
-    <!-- Compile against, but don't include JCICS in the final build (version and scope are from BOM) -->
-    <dependency>
-      <groupId>com.ibm.cics</groupId>
-      <artifactId>com.ibm.cics.server</artifactId>
-    </dependency>
 
     <!-- Spring Boot web support -->   
     <dependency>

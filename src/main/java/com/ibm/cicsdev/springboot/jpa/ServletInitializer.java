@@ -8,15 +8,16 @@
 /* restricted by GSA ADP Schedule Contract with IBM Corp                  */
 /*                                                                        */
 
-package com.ibm.cicsdev.springboot.emp.jpa;
+package com.ibm.cicsdev.springboot.jpa;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
-public class ServletInitializer extends SpringBootServletInitializer {
-
+public class ServletInitializer extends SpringBootServletInitializer 
+{
 	@Override
-	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) 
+	{
 		return application.sources(Application.class);
 	}
 }

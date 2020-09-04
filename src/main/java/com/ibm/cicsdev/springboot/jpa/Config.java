@@ -8,7 +8,7 @@
 /* restricted by GSA ADP Schedule Contract with IBM Corp                  */
 /*                                                                        */
 
-package com.ibm.cicsdev.springboot.emp.jpa;
+package com.ibm.cicsdev.springboot.jpa;
 
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -24,20 +24,25 @@ import org.springframework.context.annotation.Configuration;
  *    and a Bean to set property spring.jpa.hibernate.naming.physical-strategy
  */
 @Configuration
-public class Config {
+public class Config 
+{
 	// name the dataSource jndi name
-	private static final String DATA_SOURCE = "jdbc/jdbcDataSource-bean";
+	private static final String DATA_SOURCE = "jdbc/jdbcDataSource";
 
 	/**
 	 * @return set the DataSource the application will use
 	 */
 	@Bean
-	public DataSource dataSource() {			
-		try {
+	public DataSource dataSource() 
+	{			
+		try 
+		{
 			// Look up the connection factory from Liberty
 			DataSource ds = InitialContext.doLookup(DATA_SOURCE);
 			return ds;
-		} catch (NamingException e) {
+		} 
+		catch (NamingException e) 
+		{
 			e.printStackTrace();
 			return null;
 		}
@@ -50,7 +55,8 @@ public class Config {
 	 * 
 	 */
 	@Bean
-	public PhysicalNamingStrategy physical() {
+	public PhysicalNamingStrategy physical() 
+	{
 	    return new PhysicalNamingStrategyStandardImpl();
 	}
 }

@@ -8,7 +8,7 @@
 /* restricted by GSA ADP Schedule Contract with IBM Corp                  */
 /*                                                                        */
 
-package com.ibm.cicsdev.springboot.emp.jpa;
+package com.ibm.cicsdev.springboot.jpa;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -26,8 +26,8 @@ import org.springframework.stereotype.Service;
  */
 
 @Service
-public class EmployeeService {
-	
+public class EmployeeService 
+{
 	private LocalDate today = LocalDate.now();
 	
 	@Autowired
@@ -36,21 +36,23 @@ public class EmployeeService {
 	/**
 	 * @return a list of employees (all employees in the table EMP)
 	 */
-	public List<Emp> selectAll() {
+	public List<Emp> selectAll() 
+	{
 		System.out.println("selectAll: EmployeeService");
 		List<Emp> employees = new ArrayList<>();  //define a new list
 		employeeRepository.findAll()                   //iterate through each data item
 		.forEach(employees::add);                      // and add to list
 		System.out.println("returning from selectAll");
 		return employees;
-
 	}
 
+	
 	/**
 	 * @param empNo
 	 * @return a list of employees with the employee number specified
 	 */
-	public Optional<Emp> selectWhereEmpno(String empNo) {
+	public Optional<Emp> selectWhereEmpno(String empNo) 
+	{
 		/*
 		 * Return all rows for a specific employee number
 		 */
@@ -64,7 +66,8 @@ public class EmployeeService {
 	 * @param lName - employee last name
 	 * @return a message indicating the result of adding an employee record
 	 */
-	public String addEmployee(String fName, String lName) {
+	public String addEmployee(String fName, String lName) 
+	{
 		/*
 		 *  Add a new employee.
 		 *      Firstname and lastname are passed in 
@@ -110,17 +113,20 @@ public class EmployeeService {
 	 * @param empNo
 	 * @return a message indicating the result of deleting an employee record
 	 */
-	public String deleteEmployee(String empNo)	{
+	public String deleteEmployee(String empNo)	
+	{
 		/*
 		 *  Delete an employee based on the empNo passed in
 		 *  
 		 */
-		try {
+		try 
+		{
 			employeeRepository.deleteById(empNo);
 
 			return "employee " + empNo + " deleted";
-		} catch (Exception e) {
-
+		} 
+		catch (Exception e) 
+		{
 			return "employee delete failed try again";
 		}
 	}
@@ -131,29 +137,34 @@ public class EmployeeService {
 	 * @param newSalary
 	 * @return a message indicating the result of updating an employee record
 	 */
-	public String updateEmployee(String employeeToUpdate, long newSalary) {
+	public String updateEmployee(String employeeToUpdate, long newSalary) 
+	{
 		/*
 		 * Update a specified employee's salary based on the empNo passed to the salary passed in.
 		 * 
 		 */
 		
 		Emp emp = null;
-		if (employeeRepository.existsById(employeeToUpdate)) {
+		if (employeeRepository.existsById(employeeToUpdate)) 
+		{
 			emp = employeeRepository.getOne(employeeToUpdate);
 			emp.setSalary(newSalary);
-		} else
+		} 
+		else
 		{
 			return "Employee " + employeeToUpdate + " does not exist";
 		}
 		
-		try {
+		try 
+		{
 			employeeRepository.save(emp);
 			return "Employee " + employeeToUpdate + " salary updated";
-		} catch (Exception e) {
+		} 
+		catch (Exception e) 
+		{
 			System.out.println(e);
 			return "Employee " + employeeToUpdate + " update failed - try again";
 		}
-
 	}		
 		
 		
@@ -161,7 +172,8 @@ public class EmployeeService {
 	 * @param empNo
 	 * @return an employee record based on the employee number passed 
 	 */
-	public Emp selectWhereEmpno1(String empNo) {
+	public Emp selectWhereEmpno1(String empNo) 
+	{
 		return employeeRepository.findByEmpNo(empNo);
 	}
 }
