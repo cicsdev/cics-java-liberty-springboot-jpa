@@ -28,8 +28,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class EmployeeService 
 {
-	private LocalDate today = LocalDate.now();
-	
 	@Autowired
 	private EmployeeRepository employeeRepository;
 	
@@ -38,55 +36,47 @@ public class EmployeeService
 	 */
 	public List<Emp> selectAll() 
 	{
-		System.out.println("selectAll: EmployeeService");
-		List<Emp> employees = new ArrayList<>();  //define a new list
-		employeeRepository.findAll()                   //iterate through each data item
-		.forEach(employees::add);                      // and add to list
-		System.out.println("returning from selectAll");
+		// define a new list and iterate through each data item adding it to the list
+		List<Emp> employees = new ArrayList<>();  
+		employeeRepository.findAll().forEach(employees::add);		
 		return employees;
 	}
 
 	
 	/**
+	 * Return all rows for a specific employee number
+	 * 
 	 * @param empNo
 	 * @return a list of employees with the employee number specified
 	 */
 	public Optional<Emp> selectWhereEmpno(String empNo) 
-	{
-		/*
-		 * Return all rows for a specific employee number
-		 */
-		
+	{			
 		return employeeRepository.findById(empNo);
 	}
 
 
 	/**
+	 * Add a new employee.
+	 * 
+	 * Firstname and lastname are passed in for demonstration purposes all the other fields are set by this method
+	 * 
 	 * @param fName - employee first name
 	 * @param lName - employee last name
 	 * @return a message indicating the result of adding an employee record
 	 */
 	public String addEmployee(String fName, String lName) 
 	{
-		/*
-		 *  Add a new employee.
-		 *      Firstname and lastname are passed in 
-		 *      
-		 *      for demonstration purposes all the other fields are set by this method
-		 *      
-		 */
-
-		//generate an empNo between 300000 and 999999
+		// generate an empNo between 300000 and 999999
 		int max = 999999;
 		int min = 300000;
 		String empno = String.valueOf((int) Math.round((Math.random()*((max-min)+1))+min));
 
-		//for demo purposes hard code all the remaining fields (except first name and last name) 
+		// for demo purposes hard code all the remaining fields (except first name and last name) 
 		String midInit = "A";
 		String workdept = "E21";
 		String phoneNo = "1234";
-		
-		String hireDate = today.toString();
+				
+		String hireDate = LocalDate.now().toString();
 				
 		String job = "Engineer";
 		int edLevel =3 ;
@@ -97,28 +87,26 @@ public class EmployeeService
 		long comm = 1000;
 		
 		Emp newEmployee = new Emp(empno,fName,midInit,lName,workdept,phoneNo,hireDate,job,edLevel,sex,birthDate,salary,bonus,comm);
-
-		try {
-			employeeRepository.save(newEmployee);
-			
+		try 
+		{
+			employeeRepository.save(newEmployee);		
 			return "employee " + empno + " added";
-		} catch (Exception e) {
+		} 
+		catch (Exception e) 
+		{
 			return "employee insert failed try again";
 		}
-
 	}
 
 
 	/**
+	 *  Delete an employee based on the empNo passed in
+	 *  
 	 * @param empNo
 	 * @return a message indicating the result of deleting an employee record
 	 */
 	public String deleteEmployee(String empNo)	
 	{
-		/*
-		 *  Delete an employee based on the empNo passed in
-		 *  
-		 */
 		try 
 		{
 			employeeRepository.deleteById(empNo);
@@ -133,18 +121,17 @@ public class EmployeeService
 
 
 	/**
+	 * Update a specified employee's salary based on the empNo passed to the salary passed in.
+	 * 
 	 * @param employeeToUpdate
 	 * @param newSalary
 	 * @return a message indicating the result of updating an employee record
 	 */
 	public String updateEmployee(String employeeToUpdate, long newSalary) 
-	{
-		/*
-		 * Update a specified employee's salary based on the empNo passed to the salary passed in.
-		 * 
-		 */
-		
+	{		
 		Emp emp = null;
+		
+		// Get the employee and modify salary
 		if (employeeRepository.existsById(employeeToUpdate)) 
 		{
 			emp = employeeRepository.getOne(employeeToUpdate);
@@ -155,6 +142,7 @@ public class EmployeeService
 			return "Employee " + employeeToUpdate + " does not exist";
 		}
 		
+		// Save the employee details back
 		try 
 		{
 			employeeRepository.save(emp);

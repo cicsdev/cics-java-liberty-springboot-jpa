@@ -27,11 +27,12 @@ import org.springframework.context.annotation.Configuration;
 public class Config 
 {
 	// name the dataSource jndi name
-	private static final String DATA_SOURCE = "jdbc/jdbcDataSource";
+    private static final String DATA_SOURCE = "jdbc/jpaDataSource";
 
 	/**
 	 * @return set the DataSource the application will use
 	 */
+
 	@Bean
 	public DataSource dataSource() 
 	{			
@@ -46,7 +47,8 @@ public class Config
 			e.printStackTrace();
 			return null;
 		}
-	} 
+	}
+ 
 	
 	/**
 	 * @return new PhysicalNamingStrategyStandardImpl();

@@ -54,17 +54,25 @@ public class EmployeeRestController
 	{    
 		Date myDate = new Date();
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd:HH-mm-ss.SSSSSS");
-		String myDateString = sdf.format(myDate);
-		return "Hello from employee service controller (EMP JPA Application). Date/Time: " + myDateString;
+		String myDateString = sdf.format(myDate);		
+		
+		return "<h1>Spring Boot JPA Employee REST sample. Date/Time: " + myDateString + "</h1>"
+		+ "<h3>Usage:</h3>"
+		+ "<b>/allEmployees</b> - return a list of employees<br>"
+		+ "<b>/listEmployee/{empno}</b> - list employee records for the employee number provided <br>"
+		+ "<br> --- Update operations --- <br>"
+		+ "<b>/addEmployee/{firstName}/{lastName}</b> - add an employee <br>"				
+		+ "<b>/deleteEmployee/{empNo}</b> - delete an employee <br>"
+		+ "<b>/updateEmployee/{empNo}/{newSalary}</b> - update employee salary <br>";				
 	}
 	
 	/**
 	 * @return all rows in table EMP
 	 * @throws NamingException
 	 * 
-	 * example url http://<server>:<port>/allRows
+	 * example url http://<server>:<port>/allEmployees
 	 */
-	@GetMapping({"/allRows","/allRows/"})
+	@GetMapping({"/allEmployees","/allEmployees/"})
 	public List<Emp> getAllRows() throws NamingException 
 	{
 		System.out.println("getAllRows :EmployeeRESTController");
@@ -75,11 +83,11 @@ public class EmployeeRestController
 	 * @param empno
 	 * @return a single employee based on the employee number passed in
 	 * 
-	 *  example url http://<server>:<port>/oneEmployee/000100
+	 *  example url http://<server>:<port>/listEmployee/000100
 	 *  
 	 */
-	@GetMapping("/oneEmployee/{empno}")
-	public Optional<Emp> oneEmployee(@PathVariable String empno) 
+	@GetMapping("/listEmployee/{empno}")
+	public Optional<Emp> listEmployee(@PathVariable String empno) 
 	{
 		return employeeService.selectWhereEmpno(empno);
 	}
@@ -127,8 +135,6 @@ public class EmployeeRestController
 	@ResponseBody
 	public String updateEmp(@PathVariable String empNo, @PathVariable long newSalary) 
 	{
-		//Emp empToUpd = employeeService.selectWhereEmpno1(empNo);
-		
 		String result = employeeService.updateEmployee(empNo, newSalary);
 		return result;
 	}

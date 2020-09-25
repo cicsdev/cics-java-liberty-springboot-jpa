@@ -36,7 +36,7 @@ dependencies
 
     // Don't include TomCat in the runtime build, but do put it in WEB-INF so it can be run standalone a well as embedded
     providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
-
-    // Spring JPA Support    
-    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+    
+    // Spring JPA Support           
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")       
 }
