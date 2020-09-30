@@ -171,6 +171,5 @@ spring.data.jpa.repositories.bootstrap-mode=default
   
   >The employee record with the empNo specified will be deleted if it exists
 
-
-#License
+## License
 This project is licensed under [Eclipse Public License - v 2.0](LICENSE). 
