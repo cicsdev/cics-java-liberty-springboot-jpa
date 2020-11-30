@@ -1,73 +1,100 @@
-# Notices and Information
+<!DOCTYPE html>
+<html>
 
-## Springboot Samples
+<body>
 
-Refer to this file for details concerning notices applicable to code included in the cics-java-liberty-springboot-jpa Samples (the 'Program').
+<a name="the_top"></a>
 
-Please note: This Notices file may identify information that is not used by, or that was not shipped with, the Program as it is installed.
+<h1>Notices and Information</h1>
 
-IMPORTANT: Information contained in this NOTICES file might not be accurate.
+<section value="preamble">
 
-THE FOLLOWING SECTIONS IDENTIFY VARIOUS COMPONENTS CONTAINED IN THE PROGRAM IDENTIFIED ABOVE, AND SPECIFY CERTAIN NOTICES AND OTHER INFORMATION REGARDING THOSE COMPONENTS THAT IS REQUIRED TO BE PROVIDED TO YOU.
+<h2>Springboot Samples</h2>
 
-NOTWITHSTANDING ANY PROVISION CONTAINED IN ANY OF THE NOTICES AND OTHER INFORMATION SET FORTH BELOW, YOUR USE OF THESE PROGRAM COMPONENTS REMAINS SUBJECT TO THE TERMS AND CONDITIONS SET FORTH IN:
+<p>Refer to this file for details concerning notices applicable to code included in the Springboot Samples (the 'Program').</p>
 
-1.  THE PROGRAM'S LICENSE INFORMATION DOCUMENT; AND
-2.  THE LICENSE AGREEMENT SPECIFIED IN THAT LICENSE INFORMATION DOCUMENT.
+<p>Please note: This Notices file may identify information that is not used by, or that was not shipped with, the Program as it is installed.</p>
 
-## CONTENTS
+<p>IMPORTANT: Information contained in this NOTICES file might not be accurate.</p>
 
-1.  [Notices and Information](#section_Notices)
+</section>
 
-[Back to top](#the_top)
+<section value="disclaimer">
 
-## Notices and Information
+<p>THE FOLLOWING SECTIONS IDENTIFY VARIOUS COMPONENTS CONTAINED IN THE PROGRAM IDENTIFIED ABOVE, AND SPECIFY CERTAIN NOTICES AND OTHER INFORMATION REGARDING THOSE COMPONENTS THAT IS REQUIRED TO BE PROVIDED TO YOU. </p>
 
-\===============================================================================
+<p>NOTWITHSTANDING ANY PROVISION CONTAINED IN ANY OF THE NOTICES AND OTHER INFORMATION SET FORTH BELOW, YOUR USE OF THESE PROGRAM COMPONENTS REMAINS SUBJECT TO THE TERMS AND CONDITIONS SET FORTH IN:</p> 
+
+<ol>
+<li>THE PROGRAM'S LICENSE INFORMATION DOCUMENT; AND</li>
+<li>THE LICENSE AGREEMENT SPECIFIED IN THAT LICENSE INFORMATION DOCUMENT.</li>
+</ol>
+
+</section>
+
+<section value="contents">
+
+<h2>CONTENTS</h2>
+
+<ol>
+<li><a href="#section_Notices">Notices and Information</a></li>
+</ol>
+
+</section value="contents">
+
+<section value="Notices">
+
+<a name="section_Notices"></a>
+<a href="#the_top">Back to top</a>
+
+<h2>Notices and Information</h2>
+
+<pre>
+===============================================================================
 APACHE 2 NOTICES AND INFORMATION
 
 The following are third party components, some of which may be included for use in the Program:
 
-maven\-wrapper 0.5.6
-spring\-boot\-starter\-tomcat 2.3.0
-tomcat\-embed\-core 9.0.35
-HikariCP 3.4.5
-byte\-buddy 1.10.10
-classmate 1.5.1
-jackson\-core 2.11.0
-jackson\-databind 2.11.0
-jandex 2.1.3
-javassist 3.24.0
-jboss\-logging 3.4.1
-log4j\-api 2.13.2
-snakeyaml 1.26
-spring\-aop 5.2.6
-spring\-aspects 5.2.6
-spring\-beans 5.2.6
-spring\-boot 2.3.0
-spring\-boot\-autoconfigure 2.3.0
-spring\-boot\-starter	2.3.0
-spring\-boot\-starter\-aop	2.3.0
-spring\-boot\-starter\-data\-jpa 2.3.0
-spring\-boot\-starter\-jdbc 2.3.0
-spring\-boot\-starter\-json 2.3.0
-spring\-boot\-starter\-logging 2.3.0
-spring\-boot\-starter\-web	2.3.0
-spring\-context 5.2.6
-springsource\_spring\_framework 5.2.6
-spring\-data\-commons 2.3.0
-spring\-data\-jpa 2.3.0
-spring\-expression 5.2.6
-spring\-jcl 5.2.6
-spring\-jdbc 5.2.6
-spring\-orm 5.2.6
-spring\-tx 5.2.6
-spring\-web 5.2.6
-spring\-webmvc 5.2.6
-gradle\-wrapper 6.5
-jackson\-annotations 2.11.0
-jackson\-datatype\-jsr310	2.11.0
-log4j\-to\-slf4j 2.13.2
+maven-wrapper 0.5.6 
+spring-boot-starter-tomcat 2.3.0 
+tomcat-embed-core 9.0.35 
+HikariCP 3.4.5 
+byte-buddy 1.10.10 
+classmate 1.5.1 
+jackson-core 2.11.0 
+jackson-databind 2.11.0 
+jandex 2.1.3 
+javassist 3.24.0 
+jboss-logging 3.4.1 
+log4j-api 2.13.2 
+snakeyaml 1.26 
+spring-aop 5.2.6 
+spring-aspects 5.2.6 
+spring-beans 5.2.6 
+spring-boot 2.3.0 
+spring-boot-autoconfigure 2.3.0 
+spring-boot-starter	2.3.0 
+spring-boot-starter-aop	2.3.0 
+spring-boot-starter-data-jpa 2.3.0 
+spring-boot-starter-jdbc 2.3.0 
+spring-boot-starter-json 2.3.0 
+spring-boot-starter-logging 2.3.0 
+spring-boot-starter-web	2.3.0 
+spring-context 5.2.6 
+springsource_spring_framework 5.2.6 
+spring-data-commons 2.3.0 
+spring-data-jpa 2.3.0 
+spring-expression 5.2.6 
+spring-jcl 5.2.6 
+spring-jdbc 5.2.6 
+spring-orm 5.2.6 
+spring-tx 5.2.6 
+spring-web 5.2.6 
+spring-webmvc 5.2.6 
+gradle-wrapper 6.5 
+jackson-annotations 2.11.0 
+jackson-datatype-jsr310	2.11.0 
+log4j-to-slf4j 2.13.2 
 
                                  Apache License
                            Version 2.0, January 2004
@@ -136,14 +163,14 @@ log4j\-to\-slf4j 2.13.2
 
    2. Grant of Copyright License. Subject to the terms and conditions of
       this License, each Contributor hereby grants to You a perpetual,
-      worldwide, non\-exclusive, no\-charge, royalty\-free, irrevocable
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
       copyright license to reproduce, prepare Derivative Works of,
       publicly display, publicly perform, sublicense, and distribute the
       Work and such Derivative Works in Source or Object form.
 
    3. Grant of Patent License. Subject to the terms and conditions of
       this License, each Contributor hereby grants to You a perpetual,
-      worldwide, non\-exclusive, no\-charge, royalty\-free, irrevocable
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
       (except as stated in this section) patent license to make, have made,
       use, offer to sell, sell, import, and otherwise transfer the Work,
       where such license applies only to those patent claims licensable
@@ -151,7 +178,7 @@ log4j\-to\-slf4j 2.13.2
       Contribution(s) alone or by combination of their Contribution(s)
       with the Work to which such Contribution(s) was submitted. If You
       institute patent litigation against any entity (including a
-      cross\-claim or counterclaim in a lawsuit) alleging that the Work
+      cross-claim or counterclaim in a lawsuit) alleging that the Work
       or a Contribution incorporated within the Work constitutes direct
       or contributory patent infringement, then any patent licenses
       granted to You under this License for that Work shall terminate
@@ -183,7 +210,7 @@ log4j\-to\-slf4j 2.13.2
           as part of the Derivative Works; within the Source form or
           documentation, if provided along with the Derivative Works; or,
           within a display generated by the Derivative Works, if and
-          wherever such third\-party notices normally appear. The contents
+          wherever such third-party notices normally appear. The contents
           of the NOTICE file are for informational purposes only and
           do not modify the License. You may add Your own attribution
           notices within Derivative Works that You distribute, alongside
@@ -216,7 +243,7 @@ log4j\-to\-slf4j 2.13.2
       Contributor provides its Contributions) on an "AS IS" BASIS,
       WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
       implied, including, without limitation, any warranties or conditions
-      of TITLE, NON\-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
+      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
       PARTICULAR PURPOSE. You are solely responsible for determining the
       appropriateness of using or redistributing the Work and assume any
       risks associated with Your exercise of permissions under this License.
@@ -244,11 +271,12 @@ log4j\-to\-slf4j 2.13.2
       incurred by, or claims asserted against, such Contributor by reason
       of your accepting any such warranty or additional liability.
 
+
 END OF APACHE 2 NOTICES AND INFORMATION
 
 ===============================================================================
 BSD NOTICES AND INFORMATION
-
+ 
 The following are third party components, some of which may be included for use in the Program:
 
 antlr 2.7.7
@@ -273,7 +301,8 @@ The following are third party components, some of which may be included for use 
 
 dom4j 2.1.3
 
-Copyright 2001\-2016 (C) MetaStuff, Ltd. and DOM4J contributors. All Rights Reserved.
+
+Copyright 2001-2016 (C) MetaStuff, Ltd. and DOM4J contributors. All Rights Reserved.
 
 Redistribution and use of this software and associated documentation
 ("Software"), with or without modification, are permitted provided
@@ -282,24 +311,24 @@ that the following conditions are met:
 1. Redistributions of source code must retain copyright
    statements and notices.  Redistributions must also contain a
    copy of this document.
-
+ 
 2. Redistributions in binary form must reproduce the
    above copyright notice, this list of conditions and the
    following disclaimer in the documentation and/or other
    materials provided with the distribution.
-
+ 
 3. The name "DOM4J" must not be used to endorse or promote
    products derived from this Software without prior written
    permission of MetaStuff, Ltd.  For written permission,
-   please contact dom4j\-info@metastuff.com.
-
+   please contact dom4j-info@metastuff.com.
+ 
 4. Products derived from this Software may not be called "DOM4J"
    nor may "DOM4J" appear in their names without prior written
    permission of MetaStuff, Ltd. DOM4J is a registered
    trademark of MetaStuff, Ltd.
-
-5. Due credit should be given to the DOM4J Project \- https://dom4j.github.io/
-
+ 
+5. Due credit should be given to the DOM4J Project - https://dom4j.github.io/
+ 
 THIS SOFTWARE IS PROVIDED BY METASTUFF, LTD. AND CONTRIBUTORS
 "AS IS" AND ANY EXPRESSED OR IMPLIED WARRANTIES, INCLUDING, BUT
 NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
@@ -313,6 +342,7 @@ STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
 ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
 OF THE POSSIBILITY OF SUCH DAMAGE.
 
+
 END OF DOM4J NOTICES AND INFORMATION
 
 ===============================================================================
@@ -320,13 +350,13 @@ EDL 1.0 NOTICES AND INFORMATION
 
 The following are third party components, some of which may be included for use in the Program:
 
-istack\-commons\-runtime 3.0.11
+istack-commons-runtime 3.0.11
 jakarta.activation 1.2.2
-jakarta.xml.bind\-api 2.3.3
-jaxb\-runtime 2.3.3
+jakarta.xml.bind-api 2.3.3
+jaxb-runtime 2.3.3
 txw2 2.3.3
 
-Eclipse Distribution License \- v 1.0
+Eclipse Distribution License - v 1.0
 Copyright (c) 2007, Eclipse Foundation, Inc. and its licensors.
 
 All rights reserved.
@@ -346,9 +376,9 @@ EPL 1.0 NOTICES AND INFORMATION
 The following are third party components, some of which may be included for use in the Program:
 
 aspectjweaver 1.9.5
-logback\-core 1.2.3
+logback-core 1.2.3
 
-Eclipse Public License \- v 1.0
+Eclipse Public License - v 1.0
 
 THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS ECLIPSE PUBLIC LICENSE ("AGREEMENT"). ANY USE, REPRODUCTION OR DISTRIBUTION OF THE PROGRAM CONSTITUTES RECIPIENT'S ACCEPTANCE OF THIS AGREEMENT.
 
@@ -371,8 +401,8 @@ where such changes and/or additions to the Program originate from and are distri
 
 2. GRANT OF RIGHTS
 
-a) Subject to the terms of this Agreement, each Contributor hereby grants Recipient a non\-exclusive, worldwide, royalty\-free copyright license to reproduce, prepare derivative works of, publicly display, publicly perform, distribute and sublicense the Contribution of such Contributor, if any, and such derivative works, in source code and object code form.
-b) Subject to the terms of this Agreement, each Contributor hereby grants Recipient a non\-exclusive, worldwide, royalty\-free patent license under Licensed Patents to make, use, sell, offer to sell, import and otherwise transfer the Contribution of such Contributor, if any, in source code and object code form. This patent license shall apply to the combination of the Contribution and the Program if, at the time the Contribution is added by the Contributor, such addition of the Contribution causes such combination to be covered by the Licensed Patents. The patent license shall not apply to any other combinations which include the Contribution. No hardware per se is licensed hereunder.
+a) Subject to the terms of this Agreement, each Contributor hereby grants Recipient a non-exclusive, worldwide, royalty-free copyright license to reproduce, prepare derivative works of, publicly display, publicly perform, distribute and sublicense the Contribution of such Contributor, if any, and such derivative works, in source code and object code form.
+b) Subject to the terms of this Agreement, each Contributor hereby grants Recipient a non-exclusive, worldwide, royalty-free patent license under Licensed Patents to make, use, sell, offer to sell, import and otherwise transfer the Contribution of such Contributor, if any, in source code and object code form. This patent license shall apply to the combination of the Contribution and the Program if, at the time the Contribution is added by the Contributor, such addition of the Contribution causes such combination to be covered by the Licensed Patents. The patent license shall not apply to any other combinations which include the Contribution. No hardware per se is licensed hereunder.
 c) Recipient understands that although each Contributor grants the licenses to its Contributions set forth herein, no assurances are provided by any Contributor that the Program does not infringe the patent or other intellectual property rights of any other entity. Each Contributor disclaims any liability to Recipient for claims brought by any other entity based on infringement of intellectual property rights or otherwise. As a condition to exercising the rights and licenses granted hereunder, each Recipient hereby assumes sole responsibility to secure any other intellectual property rights needed, if any. For example, if a third party patent license is required to allow Recipient to distribute the Program, it is Recipient's responsibility to acquire that license before distributing the Program.
 d) Each Contributor represents that to its knowledge it has sufficient copyright rights in its Contribution, if any, to grant the copyright license set forth in this Agreement.
 3. REQUIREMENTS
@@ -381,7 +411,7 @@ A Contributor may choose to distribute the Program in object code form under its
 
 a) it complies with the terms and conditions of this Agreement; and
 b) its license agreement:
-i) effectively disclaims on behalf of all Contributors all warranties and conditions, express and implied, including warranties or conditions of title and non\-infringement, and implied warranties or conditions of merchantability and fitness for a particular purpose;
+i) effectively disclaims on behalf of all Contributors all warranties and conditions, express and implied, including warranties or conditions of title and non-infringement, and implied warranties or conditions of merchantability and fitness for a particular purpose;
 ii) effectively excludes on behalf of all Contributors all liability for damages, including direct, indirect, special, incidental and consequential damages, such as lost profits;
 iii) states that any provisions which differ from this Agreement are offered by that Contributor alone and not by any other party; and
 iv) states that source code for the Program is available from such Contributor, and informs licensees how to obtain it in a reasonable manner on or through a medium customarily used for software exchange.
@@ -401,7 +431,7 @@ For example, a Contributor might include the Program in a commercial product off
 
 5. NO WARRANTY
 
-EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, THE PROGRAM IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED INCLUDING, WITHOUT LIMITATION, ANY WARRANTIES OR CONDITIONS OF TITLE, NON\-INFRINGEMENT, MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE. Each Recipient is solely responsible for determining the appropriateness of using and distributing the Program and assumes all risks associated with its exercise of rights under this Agreement , including but not limited to the risks and costs of program errors, compliance with applicable laws, damage to or loss of data, programs or equipment, and unavailability or interruption of operations.
+EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, THE PROGRAM IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED INCLUDING, WITHOUT LIMITATION, ANY WARRANTIES OR CONDITIONS OF TITLE, NON-INFRINGEMENT, MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE. Each Recipient is solely responsible for determining the appropriateness of using and distributing the Program and assumes all risks associated with its exercise of rights under this Agreement , including but not limited to the risks and costs of program errors, compliance with applicable laws, damage to or loss of data, programs or equipment, and unavailability or interruption of operations.
 
 6. DISCLAIMER OF LIABILITY
 
@@ -411,13 +441,14 @@ EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, NEITHER RECIPIENT NOR ANY CONTR
 
 If any provision of this Agreement is invalid or unenforceable under applicable law, it shall not affect the validity or enforceability of the remainder of the terms of this Agreement, and without further action by the parties hereto, such provision shall be reformed to the minimum extent necessary to make such provision valid and enforceable.
 
-If Recipient institutes patent litigation against any entity (including a cross\-claim or counterclaim in a lawsuit) alleging that the Program itself (excluding combinations of the Program with other software or hardware) infringes such Recipient's patent(s), then such Recipient's rights granted under Section 2(b) shall terminate as of the date such litigation is filed.
+If Recipient institutes patent litigation against any entity (including a cross-claim or counterclaim in a lawsuit) alleging that the Program itself (excluding combinations of the Program with other software or hardware) infringes such Recipient's patent(s), then such Recipient's rights granted under Section 2(b) shall terminate as of the date such litigation is filed.
 
 All Recipient's rights under this Agreement shall terminate if it fails to comply with any of the material terms or conditions of this Agreement and does not cure such failure in a reasonable period of time after becoming aware of such noncompliance. If all Recipient's rights under this Agreement terminate, Recipient agrees to cease use and distribution of the Program as soon as reasonably practicable. However, Recipient's obligations under this Agreement and any licenses granted by Recipient relating to the Program shall continue and survive.
 
 Everyone is permitted to copy and distribute copies of this Agreement, but in order to avoid inconsistency the Agreement is copyrighted and may only be modified in the following manner. The Agreement Steward reserves the right to publish new versions (including revisions) of this Agreement from time to time. No one other than the Agreement Steward has the right to modify this Agreement. The Eclipse Foundation is the initial Agreement Steward. The Eclipse Foundation may assign the responsibility to serve as the Agreement Steward to a suitable separate entity. Each new version of the Agreement will be given a distinguishing version number. The Program (including Contributions) may always be distributed subject to the version of the Agreement under which it was received. In addition, after a new version of the Agreement is published, Contributor may elect to distribute the Program (including its Contributions) under the new version. Except as expressly stated in Sections 2(a) and 2(b) above, Recipient receives no rights or licenses to the intellectual property of any Contributor under this Agreement, whether expressly, by implication, estoppel or otherwise. All rights in the Program not expressly granted under this Agreement are reserved.
 
 This Agreement is governed by the laws of the State of New York and the intellectual property laws of the United States of America. No party to this Agreement will bring a legal action under this Agreement more than one year after the cause of action arose. Each party waives its rights to a jury trial in any resulting litigation.
+
 
 END OF EPL 1.0 NOTICES AND INFORMATION
 
@@ -426,12 +457,12 @@ EPL 2.0 NOTICES AND INFORMATION
 
 The following are third party components, some of which may be included for use in the Program:
 
-jakarta.annotation\-api 1.3.5
+jakarta.annotation-api 1.3.5
 jakarta.el 3.0.3
-jakarta.persistence\-api 2.2.3
-jakarta.transaction\-api 1.3.3
+jakarta.persistence-api 2.2.3
+jakarta.transaction-api 1.3.3
 
-Eclipse Public License \- v 2.0
+Eclipse Public License - v 2.0
 
 THE ACCOMPANYING PROGRAM IS PROVIDED UNDER THE TERMS OF THIS ECLIPSE PUBLIC LICENSE ("AGREEMENT"). ANY USE, REPRODUCTION OR DISTRIBUTION OF THE PROGRAM CONSTITUTES RECIPIENT'S ACCEPTANCE OF THIS AGREEMENT.
 
@@ -462,8 +493,8 @@ where such changes and/or additions to the Program originate from and are Distri
 "Secondary License" means either the GNU General Public License, Version 2.0, or any later versions of that license, including any exceptions or additional permissions as identified by the initial Contributor.
 
 2. GRANT OF RIGHTS
-a) Subject to the terms of this Agreement, each Contributor hereby grants Recipient a non\-exclusive, worldwide, royalty\-free copyright license to reproduce, prepare Derivative Works of, publicly display, publicly perform, Distribute and sublicense the Contribution of such Contributor, if any, and such Derivative Works.
-b) Subject to the terms of this Agreement, each Contributor hereby grants Recipient a non\-exclusive, worldwide, royalty\-free patent license under Licensed Patents to make, use, sell, offer to sell, import and otherwise transfer the Contribution of such Contributor, if any, in Source Code or other form. This patent license shall apply to the combination of the Contribution and the Program if, at the time the Contribution is added by the Contributor, such addition of the Contribution causes such combination to be covered by the Licensed Patents. The patent license shall not apply to any other combinations which include the Contribution. No hardware per se is licensed hereunder.
+a) Subject to the terms of this Agreement, each Contributor hereby grants Recipient a non-exclusive, worldwide, royalty-free copyright license to reproduce, prepare Derivative Works of, publicly display, publicly perform, Distribute and sublicense the Contribution of such Contributor, if any, and such Derivative Works.
+b) Subject to the terms of this Agreement, each Contributor hereby grants Recipient a non-exclusive, worldwide, royalty-free patent license under Licensed Patents to make, use, sell, offer to sell, import and otherwise transfer the Contribution of such Contributor, if any, in Source Code or other form. This patent license shall apply to the combination of the Contribution and the Program if, at the time the Contribution is added by the Contributor, such addition of the Contribution causes such combination to be covered by the Licensed Patents. The patent license shall not apply to any other combinations which include the Contribution. No hardware per se is licensed hereunder.
 c) Recipient understands that although each Contributor grants the licenses to its Contributions set forth herein, no assurances are provided by any Contributor that the Program does not infringe the patent or other intellectual property rights of any other entity. Each Contributor disclaims any liability to Recipient for claims brought by any other entity based on infringement of intellectual property rights or otherwise. As a condition to exercising the rights and licenses granted hereunder, each Recipient hereby assumes sole responsibility to secure any other intellectual property rights needed, if any. For example, if a third party patent license is required to allow Recipient to Distribute the Program, it is Recipient's responsibility to acquire that license before distributing the Program.
 d) Each Contributor represents that to its knowledge it has sufficient copyright rights in its Contribution, if any, to grant the copyright license set forth in this Agreement.
 e) Notwithstanding the terms of any Secondary License, no Contributor makes additional grants to any Recipient (other than those set forth in this Agreement) as a result of such Recipient's receipt of the Program under the terms of a Secondary License (if permitted under the terms of Section 3).
@@ -472,7 +503,7 @@ e) Notwithstanding the terms of any Secondary License, no Contributor makes addi
 
 a) the Program must also be made available as Source Code, in accordance with section 3.2, and the Contributor must accompany the Program with a statement that the Source Code for the Program is available under this Agreement, and informs Recipients how to obtain it in a reasonable manner on or through a medium customarily used for software exchange; and
 b) the Contributor may Distribute the Program under a license different than this Agreement, provided that such license:
-i) effectively disclaims on behalf of all other Contributors all warranties and conditions, express and implied, including warranties or conditions of title and non\-infringement, and implied warranties or conditions of merchantability and fitness for a particular purpose;
+i) effectively disclaims on behalf of all other Contributors all warranties and conditions, express and implied, including warranties or conditions of title and non-infringement, and implied warranties or conditions of merchantability and fitness for a particular purpose;
 ii) effectively excludes on behalf of all other Contributors all liability for damages, including direct, indirect, special, incidental and consequential damages, such as lost profits;
 iii) does not attempt to limit or alter the recipients' rights in the Source Code under section 3.2; and
 iv) requires any subsequent distribution of the Program by any party to be under a license that satisfies the requirements of this section 3.
@@ -488,7 +519,7 @@ Commercial distributors of software may accept certain responsibilities with res
 For example, a Contributor might include the Program in a commercial product offering, Product X. That Contributor is then a Commercial Contributor. If that Commercial Contributor then makes performance claims, or offers warranties related to Product X, those performance claims and warranties are such Commercial Contributor's responsibility alone. Under this section, the Commercial Contributor would have to defend claims against the other Contributors related to those performance claims and warranties, and if a court requires any other Contributor to pay any damages as a result, the Commercial Contributor must pay those damages.
 
 5. NO WARRANTY
-EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, AND TO THE EXTENT PERMITTED BY APPLICABLE LAW, THE PROGRAM IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED INCLUDING, WITHOUT LIMITATION, ANY WARRANTIES OR CONDITIONS OF TITLE, NON\-INFRINGEMENT, MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE. Each Recipient is solely responsible for determining the appropriateness of using and distributing the Program and assumes all risks associated with its exercise of rights under this Agreement, including but not limited to the risks and costs of program errors, compliance with applicable laws, damage to or loss of data, programs or equipment, and unavailability or interruption of operations.
+EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, AND TO THE EXTENT PERMITTED BY APPLICABLE LAW, THE PROGRAM IS PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED INCLUDING, WITHOUT LIMITATION, ANY WARRANTIES OR CONDITIONS OF TITLE, NON-INFRINGEMENT, MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE. Each Recipient is solely responsible for determining the appropriateness of using and distributing the Program and assumes all risks associated with its exercise of rights under this Agreement, including but not limited to the risks and costs of program errors, compliance with applicable laws, damage to or loss of data, programs or equipment, and unavailability or interruption of operations.
 
 6. DISCLAIMER OF LIABILITY
 EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, AND TO THE EXTENT PERMITTED BY APPLICABLE LAW, NEITHER RECIPIENT NOR ANY CONTRIBUTORS SHALL HAVE ANY LIABILITY FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING WITHOUT LIMITATION LOST PROFITS), HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OR DISTRIBUTION OF THE PROGRAM OR THE EXERCISE OF ANY RIGHTS GRANTED HEREUNDER, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
@@ -496,13 +527,13 @@ EXCEPT AS EXPRESSLY SET FORTH IN THIS AGREEMENT, AND TO THE EXTENT PERMITTED BY 
 7. GENERAL
 If any provision of this Agreement is invalid or unenforceable under applicable law, it shall not affect the validity or enforceability of the remainder of the terms of this Agreement, and without further action by the parties hereto, such provision shall be reformed to the minimum extent necessary to make such provision valid and enforceable.
 
-If Recipient institutes patent litigation against any entity (including a cross\-claim or counterclaim in a lawsuit) alleging that the Program itself (excluding combinations of the Program with other software or hardware) infringes such Recipient's patent(s), then such Recipient's rights granted under Section 2(b) shall terminate as of the date such litigation is filed.
+If Recipient institutes patent litigation against any entity (including a cross-claim or counterclaim in a lawsuit) alleging that the Program itself (excluding combinations of the Program with other software or hardware) infringes such Recipient's patent(s), then such Recipient's rights granted under Section 2(b) shall terminate as of the date such litigation is filed.
 
 All Recipient's rights under this Agreement shall terminate if it fails to comply with any of the material terms or conditions of this Agreement and does not cure such failure in a reasonable period of time after becoming aware of such noncompliance. If all Recipient's rights under this Agreement terminate, Recipient agrees to cease use and distribution of the Program as soon as reasonably practicable. However, Recipient's obligations under this Agreement and any licenses granted by Recipient relating to the Program shall continue and survive.
 
 Everyone is permitted to copy and distribute copies of this Agreement, but in order to avoid inconsistency the Agreement is copyrighted and may only be modified in the following manner. The Agreement Steward reserves the right to publish new versions (including revisions) of this Agreement from time to time. No one other than the Agreement Steward has the right to modify this Agreement. The Eclipse Foundation is the initial Agreement Steward. The Eclipse Foundation may assign the responsibility to serve as the Agreement Steward to a suitable separate entity. Each new version of the Agreement will be given a distinguishing version number. The Program (including Contributions) may always be Distributed subject to the version of the Agreement under which it was received. In addition, after a new version of the Agreement is published, Contributor may elect to Distribute the Program (including its Contributions) under the new version.
 
-Except as expressly stated in Sections 2(a) and 2(b) above, Recipient receives no rights or licenses to the intellectual property of any Contributor under this Agreement, whether expressly, by implication, estoppel or otherwise. All rights in the Program not expressly granted under this Agreement are reserved. Nothing in this Agreement is intended to be enforceable by any entity that is not a Contributor or Recipient. No third\-party beneficiary rights are created under this Agreement.
+Except as expressly stated in Sections 2(a) and 2(b) above, Recipient receives no rights or licenses to the intellectual property of any Contributor under this Agreement, whether expressly, by implication, estoppel or otherwise. All rights in the Program not expressly granted under this Agreement are reserved. Nothing in this Agreement is intended to be enforceable by any entity that is not a Contributor or Recipient. No third-party beneficiary rights are created under this Agreement.
 
 Exhibit A – Form of Secondary Licenses Notice
 "This Source Code may also be made available under the following Secondary Licenses when the conditions for such availability set forth in the Eclipse Public License, v. 2.0 are satisfied: {name license(s), version(s), and exceptions or additional permissions here}."
@@ -513,6 +544,7 @@ If it is not possible or desirable to put the notice in a particular file, then 
 
 You may add additional accurate notices of copyright ownership.
 
+
 END OF EPL 2.0 NOTICES AND INFORMATION
 
 ===============================================================================
@@ -520,30 +552,31 @@ LGPL 2.1 NOTICES AND INFORMATION
 
 The following are third party components, some of which may be included for use in the Program:
 
-hibernate\-commons\-annotations 5.1.0
-hibernate\-core 5.4.15
+hibernate-commons-annotations 5.1.0
+hibernate-core 5.4.15
+
 
                   GNU LESSER GENERAL PUBLIC LICENSE
                        Version 2.1, February 1999
 
  Copyright (C) 1991, 1999 Free Software Foundation, Inc.
- 51 Franklin Street, Fifth Floor, Boston, MA  02110\-1301  USA
+ 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
  Everyone is permitted to copy and distribute verbatim copies
  of this license document, but changing it is not allowed.
 
-\[This is the first released version of the Lesser GPL.  It also counts
+[This is the first released version of the Lesser GPL.  It also counts
  as the successor of the GNU Library Public License, version 2, hence
- the version number 2.1.\]
+ the version number 2.1.]
 
                             Preamble
 
   The licenses for most software are designed to take away your
 freedom to share and change it.  By contrast, the GNU General Public
 Licenses are intended to guarantee your freedom to share and change
-free software\-\-to make sure the software is free for all its users.
+free software--to make sure the software is free for all its users.
 
   This license, the Lesser General Public License, applies to some
-specially designated software packages\-\-typically libraries\-\-of the
+specially designated software packages--typically libraries--of the
 Free Software Foundation and other authors who decide to use it.  You
 can use it too, but we suggest you first think carefully about whether
 this license or the ordinary General Public License is the better
@@ -570,7 +603,7 @@ complete object files to the recipients, so that they can relink them
 with the library after making changes to the library and recompiling
 it.  And you must show them these terms so they know their rights.
 
-  We protect your rights with a two\-step method: (1) we copyright the
+  We protect your rights with a two-step method: (1) we copyright the
 library, and (2) we offer you this license, which gives you legal
 permission to copy, distribute and/or modify the library.
 
@@ -593,7 +626,7 @@ ordinary GNU General Public License.  This license, the GNU Lesser
 General Public License, applies to certain designated libraries, and
 is quite different from the ordinary General Public License.  We use
 this license for certain libraries in order to permit linking those
-libraries into non\-free programs.
+libraries into non-free programs.
 
   When a program is linked with a library, whether statically or using
 a shared library, the combination of the two is legally speaking a
@@ -606,23 +639,23 @@ the library.
   We call this license the "Lesser" General Public License because it
 does Less to protect the user's freedom than the ordinary General
 Public License.  It also provides other free software developers Less
-of an advantage over competing non\-free programs.  These disadvantages
+of an advantage over competing non-free programs.  These disadvantages
 are the reason we use the ordinary General Public License for many
 libraries.  However, the Lesser license provides advantages in certain
 special circumstances.
 
   For example, on rare occasions, there may be a special need to
 encourage the widest possible use of a certain library, so that it becomes
-a de\-facto standard.  To achieve this, non\-free programs must be
+a de-facto standard.  To achieve this, non-free programs must be
 allowed to use the library.  A more frequent case is that a free
-library does the same job as widely used non\-free libraries.  In this
+library does the same job as widely used non-free libraries.  In this
 case, there is little to gain by limiting the free library to free
 software only, so we use the Lesser General Public License.
 
-  In other cases, permission to use a particular library in non\-free
+  In other cases, permission to use a particular library in non-free
 programs enables a greater number of people to use a large body of
 free software.  For example, permission to use the GNU C Library in
-non\-free programs enables many more people to use the whole GNU
+non-free programs enables many more people to use the whole GNU
 operating system, as well as its variant, the GNU/Linux operating
 system.
 
@@ -706,9 +739,9 @@ above, provided that you also meet all of these conditions:
     its purpose remains meaningful.
 
     (For example, a function in a library to compute square roots has
-    a purpose that is entirely well\-defined independent of the
+    a purpose that is entirely well-defined independent of the
     application.  Therefore, Subsection 2d requires that any
-    application\-supplied function or table used by this function must
+    application-supplied function or table used by this function must
     be optional: if the application does not supply it, the square
     root function must still compute square roots.)
 
@@ -752,7 +785,7 @@ the Library into a program that is not a library.
   4. You may copy and distribute the Library (or a portion or
 derivative of it, under Section 2) in object code or executable form
 under the terms of Sections 1 and 2 above provided that you accompany
-it with the complete corresponding machine\-readable source code, which
+it with the complete corresponding machine-readable source code, which
 must be distributed under the terms of Sections 1 and 2 above on a
 medium customarily used for software interchange.
 
@@ -809,10 +842,10 @@ directing the user to the copy of this License.  Also, you must do one
 of these things:
 
     a) Accompany the work with the complete corresponding
-    machine\-readable source code for the Library including whatever
+    machine-readable source code for the Library including whatever
     changes were used in the work (which must be distributed under
     Sections 1 and 2 above); and, if the work is an executable linked
-    with the Library, with the complete machine\-readable "work that
+    with the Library, with the complete machine-readable "work that
     uses the Library", as object code and/or source code, so that the
     user can modify the Library and then relink to produce a modified
     executable containing the modified Library.  (It is understood
@@ -826,7 +859,7 @@ of these things:
     rather than copying library functions into the executable, and (2)
     will operate properly with a modified version of the library, if
     the user installs one, as long as the modified version is
-    interface\-compatible with the version that the work was made with.
+    interface-compatible with the version that the work was made with.
 
     c) Accompany the work with a written offer, valid for at
     least three years, to give the same user the materials
@@ -856,7 +889,7 @@ use both them and the Library together in an executable that you
 distribute.
 
   7. You may place library facilities that are a work based on the
-Library side\-by\-side in a single library together with other library
+Library side-by-side in a single library together with other library
 facilities not covered by this License, and distribute such a combined
 library, provided that the separate distribution of the work based on
 the Library and of the other library facilities is otherwise
@@ -904,7 +937,7 @@ excuse you from the conditions of this License.  If you cannot
 distribute so as to satisfy simultaneously your obligations under this
 License and any other pertinent obligations, then as a consequence you
 may not distribute the Library at all.  For example, if a patent
-license would not permit royalty\-free redistribution of the Library by
+license would not permit royalty-free redistribution of the Library by
 all those who receive copies directly or indirectly through you, then
 the only way you could satisfy both it and this License would be to
 refrain entirely from distribution of the Library.
@@ -981,7 +1014,7 @@ SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH
 DAMAGES.
 
                      END OF TERMS AND CONDITIONS
-
+					 
            How to Apply These Terms to Your New Libraries
 
   If you develop a new library, and you want it to be of the greatest
@@ -1010,7 +1043,7 @@ convey the exclusion of warranty; and each file should have at least the
 
     You should have received a copy of the GNU Lesser General Public
     License along with this library; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110\-1301  USA
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
 
 Also add information on how to contact you by electronic and paper mail.
 
@@ -1026,6 +1059,7 @@ necessary.  Here is a sample; alter the names:
 
 That's all there is to it!
 
+
 END OF LGPL 2.1 NOTICES AND INFORMATION
 
 ===============================================================================
@@ -1033,8 +1067,8 @@ MIT NOTICES AND INFORMATION
 
 The following are third party components, some of which may be included for use in the Program:
 
-jul\-to\-slf4j 1.7.30
-slf4j\-api 1.7.30
+jul-to-slf4j 1.7.30
+slf4j-api 1.7.30
 
 Copyright (c)  year    copyright holders
 
@@ -1056,8 +1090,25 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
+
 END OF MIT NOTICES AND INFORMATION
 
 ===============================================================================
 
-[Back to top](#the_top)
+</pre>
+
+
+</section value="Notices">
+
+
+<section value="footer">
+
+<a name="section_footer"></a>
+
+<a href="#the_top">Back to top</a>
+
+</section value="footer">
+
+</body>
+
+</html>
