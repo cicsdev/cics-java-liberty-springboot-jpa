@@ -185,7 +185,7 @@ spec:
         # - notify-status
       params:
         - name: url
-          value: https://@$(params.gitHubHost)/$(params.gitHubOrg)/$(params.gitRepoName).git
+          value: https://$(params.gitHubHost)/$(params.gitHubOrg)/$(params.gitRepoName).git
         - name: revision
           value: $(params.gitRevision)
         - name: depth
