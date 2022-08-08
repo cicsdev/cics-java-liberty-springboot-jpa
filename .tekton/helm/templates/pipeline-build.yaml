@@ -119,8 +119,8 @@ spec:
       params:
         - name: containerRegistry
           value: $(params.containerRegistry)
-        - name: gitHubUrl
-          value: https://api.$( params.gitHubHost )
+        - name: gitHubHost
+          value: $(params.gitHubHost)
         - name: buildType
           value: $(params.buildType)
         - name: gitRevision
@@ -412,8 +412,8 @@ spec:
       params:
         - name: containerRegistry
           value: $(params.containerRegistry)
-        - name: gitHubUrl
-          value: https://api.$(params.gitHubHost)
+        - name: gitHubHost
+          value: $(params.gitHubHost)
         - name: buildType
           value: $(params.buildType)
         - name: gitRevision
