@@ -1,0 +1,26 @@
+# The git branch we are serving up built artifacts for.
+gitBranch: main
+
+# The URL for the application is of the form: baseUrlPath/gitBranchName
+baseUrlPath: samples-cics-java-liberty-springboot-jpa
+
+# The base name for kube resources to make them small enough.
+argoAppName: samples-cjl-spring-jcics
+
+# The path of the docker image into our docker registry.
+dockerImageName: "cics-java-dev/samples/cics-java-liberty-springboot-jpa"
+
+# The tag used at the end of the container image full name.
+containerImageTag: "main"
+
+# The name of the git repository
+gitRepoName: cics-java-liberty-springboot-jpa
+
+# The docker registry we draw images from.
+containerRegistry: harbor-cicsk8s.hursley.ibm.com
+
+# The host name of the github site where this source code is stored.
+gitHubHost: github.com
+
+# The organisation which owns this repository.
+gitHubOrg: techcobweb
