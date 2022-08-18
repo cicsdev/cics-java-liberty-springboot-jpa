@@ -120,7 +120,7 @@ spec:
         - name: containerRegistry
           value: $(params.containerRegistry)
         - name: gitHubHost
-          value: $( params.gitHubHost )
+          value: $(params.gitHubHost)
         - name: buildType
           value: $(params.buildType)
         - name: gitRevision
@@ -185,7 +185,7 @@ spec:
         # - notify-status
       params:
         - name: url
-          value: https://$(params.gitHubHost)/$(params.gitHubOrg)/$(params.gitRepoName).git
+          value: {{ .Values.gitHubCloneUrl }}
         - name: revision
           value: $(params.gitRevision)
         - name: depth
@@ -333,7 +333,7 @@ spec:
 
       params:
         - name: url
-          value: git@$(params.gitHubHost):$(params.gitHubOrg)/$(params.gitRepoName).git
+          value: {{ .Values.gitHubCloneUrl }}
         - name: revision
           value: $(params.gitRevision)
         - name: repoName
