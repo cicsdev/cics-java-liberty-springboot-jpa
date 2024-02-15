@@ -74,35 +74,33 @@ This creates a WAR file in the `target` directory.
 
 ## Deploying to a CICS Liberty JVM Server
 
-### update features in server.xml
-- Ensure you have the following features defined in your Liberty `server.xml`:           
-    - `<servlet-3.1>` or `<servlet-4.0>` depending on the version of Java EE in use.  
-    - `<cicsts:security-1.0>` if CICS security is enabled.
-    - `<jsp-2.3>`
-    - `<jdbc-4.0>` or `jdbc-4.1>`
+### Configure Liberty
+1. Ensure you have the following features defined in your Liberty `server.xml`:           
+   - `servlet-3.1` or `servlet-4.0` depending on the version of Java EE in use.  
+   - `cicsts:security-1.0` if CICS security is enabled.
+   - `jsp-2.3`
+   - `jdbc-4.0` or `jdbc-4.1`
 
->**Note:** `servlet-4.0` will only work for CICS TS V5.5 or later
+   >**Note:** `servlet-4.0` will only work for CICS TS V5.5 or later
 
-- add a dataSource definition to 'server.xml'. This sample uses a type 2 connection. The application connects to this dataSource by using a @Bean DataSource which connects using the jndiName value `jdbc/jpaDataSource`
+2. Add a dataSource definition to `server.xml`. This sample uses a type 2 connection. The application connects to this dataSource by using a @Bean DataSource which connects using the jndiName value `jdbc/jpaDataSource`
 
-E.g. as follows:
-
-``` XML
-<dataSource id="t2" jndiName="jdbc/jpaDataSource" transactional="false">
-        <jdbcDriver>   
-            <library name="DB2LIB">
-                <fileset dir="/usr/lpp/db2v11/jdbc/classes" includes="db2jcc4.jar db2jcc_license_cisuz.jar"/>
-                <fileset dir="/usr/lpp/db2v11/jdbc/lib" includes="libdb2jcct2zos4_64.so"/>
-            </library>
-        </jdbcDriver>
-        <properties.db2.jcc currentSchema="DSN81110" driverType="2"/>
-        <connectionManager agedTimeout="0"/>
-    </dataSource>
-```
+   ``` XML
+   <dataSource id="t2" jndiName="jdbc/jpaDataSource" transactional="false">
+       <jdbcDriver>   
+           <library name="DB2LIB">
+               <fileset dir="/usr/lpp/db2v11/jdbc/classes" includes="db2jcc4.jar db2jcc_license_cisuz.jar"/>
+               <fileset dir="/usr/lpp/db2v11/jdbc/lib" includes="libdb2jcct2zos4_64.so"/>
+           </library>
+       </jdbcDriver>
+       <properties.db2.jcc currentSchema="DSN81110" driverType="2"/>
+       <connectionManager agedTimeout="0"/>
+   </dataSource>
+   ```
 
 Your CICS region will also require an active connection to Db2 using a CICS DB2CONN resource.
   
-### update application.properties 
+### Update application.properties 
 
 this file contains the following entries 
 
@@ -112,20 +110,23 @@ spring.jpa.show-sql=true
 spring.data.jpa.repositories.bootstrap-mode=default
 ```
 
-*spring-jpa.show-sql* is not required, but is useful to display the sql which the JPA function is using to satisfy the requests being made.
-
-*spring.jpa.properties.hibernate.dialect* is required to ensure that the application generates SQL which can be run by Db2
-
-*spring.data.jpa.repositories.bootstrap-mode=default* is required. The `deferred` or `lazy` modes should NOT be used as they attempt to asynchronously access the database on a non-CICS/Db2 enabled thread. 
+- *spring-jpa.show-sql* is not required, but is useful to display the sql which the JPA function is using to satisfy the requests being made.
+- *spring.jpa.properties.hibernate.dialect* is required to ensure that the application generates SQL which can be run by Db2
+- *spring.data.jpa.repositories.bootstrap-mode=default* is required. The `deferred` or `lazy` modes should NOT be used as they attempt to asynchronously access the database on a non-CICS/Db2 enabled thread. 
 
 
-- Deployment option 1:
-    - Copy and paste the built WAR from your *target* or *build/libs* directory into a Eclipse CICS bundle project and create a new WAR bundlepart that references the WAR file. Then deploy the CICS bundle project from CICS Explorer using the **Export Bundle Project to z/OS UNIX File System** wizard.
+### Deploy with CICS Bundles
+1. Copy and paste the built WAR from your *target* or *build/libs* directory into a Eclipse CICS bundle project.
+2. Create a new WAR bundlepart that references the WAR file.
+3. Deploy the CICS bundle project from CICS Explorer using the **Export Bundle Project to z/OS UNIX File System** wizard.
     
-- Deployment option 2:
-    - Manually upload the WAR file to zFS and add an `<application>` element to the Liberty server.xml to define the web application with access to all authenticated users. For example the following application element can be used to install a WAR, and grant access to all authenticated users if security is enabled.
+### Deploy with Liberty configuration
+1. Manually upload the WAR file to zFS
+2. Add an `<application>` element to the Liberty server.xml to define the web application with access to all authenticated users.
 
-``` XML
+   For example the following application element can be used to install a WAR, and grant access to all authenticated users if security is enabled.
+
+   ``` XML
    <application id="cics-java-liberty-springboot-jpa-0.1.0"  
      location="${server.config.dir}/springapps/cics-java-liberty-springboot-jpa-0.1.0.war"  
      name="cics-java-liberty-springboot.jpa-0.1.0" type="war">
@@ -135,7 +136,7 @@ spring.data.jpa.repositories.bootstrap-mode=default
         </security-role>
      </application-bnd>  
    </application>
-```
+   ```
 
 ## Trying out the sample
 1. Ensure the web application started successfully in Liberty by checking for msg `CWWKT0016I` in the Liberty messages.log:
