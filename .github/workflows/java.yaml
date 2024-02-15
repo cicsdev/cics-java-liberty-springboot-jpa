@@ -31,7 +31,7 @@ jobs:
           cache: maven
       - name: Build with Maven
         run: mvn --batch-mode --update-snapshots --file pom.xml -Djava.version=${{ matrix.jdk }} package
-      - run: mkdir staging && cp cics-java-liberty-link-app/target/*.war staging
+      - run: mkdir staging && cp target/*.war staging
       - uses: actions/upload-artifact@v4
         with:
           name: cics-java-liberty-springbook-jpa (Maven, Java ${{ matrix.jdk }})
