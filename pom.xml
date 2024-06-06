@@ -1,5 +1,5 @@
-<project 
-  xmlns="http://maven.apache.org/POM/4.0.0" 
+<project
+  xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
@@ -9,41 +9,46 @@
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
     <version>2.7.0</version>
-    <relativePath/>
+    <relativePath />
   </parent>
 
   <!-- Application properties -->
   <groupId>com.ibm.cicsdev.springboot</groupId>
   <artifactId>cics-java-liberty-springboot-jpa</artifactId>
-  <version>0.1.0</version>   
+  <version>0.1.0</version>
   <name>cics-java-liberty-springboot.jpa</name>
   <description>Demo JPA project for Spring Boot</description>
   <properties>
     <java.version>1.8</java.version>
+
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+    <maven.compiler.source>${java.version}</maven.compiler.source>
   </properties>
-   
+
   <dependencies>
 
-    <!-- Spring Boot web support -->   
+    <!-- Spring Boot web support -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
-    </dependency> 
+    </dependency>
 
     <!-- Spring Integration JPA Support  -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-data-jpa</artifactId>
     </dependency>
-    
-    <!-- Don't include TomCat in the runtime build, but do put it in WEB-INF so it can be run standalone a well as embedded --> 
+
+    <!-- Don't include TomCat in the runtime build, but do put it in WEB-INF so it can be run
+    standalone a well as embedded -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-tomcat</artifactId>
       <scope>provided</scope>
-    </dependency>  
+    </dependency>
   </dependencies>
-  
+
   <!-- Package as an executable war (default is jar) -->
   <packaging>war</packaging>
   <build>
@@ -52,9 +57,9 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
       </plugin>
-   </plugins>
+    </plugins>
   </build>
-  
+
   <!-- 
   Publishes artifacts to here if the deploy goal is used. 
 
@@ -74,5 +79,5 @@
       <url>${publish_repo_releases_url}</url>
     </repository>
   </distributionManagement>
-  
+
 </project>
