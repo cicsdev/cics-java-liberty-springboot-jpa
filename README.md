@@ -1,5 +1,5 @@
 # cics-java-liberty-springboot-jpa
-[![Build](https://github.com/SoftlySplinter/cics-java-liberty-springboot-jpa/actions/workflows/java.yaml/badge.svg)](https://github.com/SoftlySplinter/cics-java-liberty-springboot-jpa/actions/workflows/java.yaml)
+[![Build](https://github.com/cicsdev/cics-java-liberty-springboot-jpa/actions/workflows/java.yaml/badge.svg)](https://github.com/cicsdev/cics-java-liberty-springboot-jpa/actions/workflows/java.yaml)
 
 This project demonstrates a Spring Boot application, which uses Spring Data JPA, integrated with IBM CICS that can be deployed to a CICS Liberty JVM server. The application makes use of the employee sample table supplied with Db2 for z/OS. The application allows you to add, update, delete or display employee information from the table EMP.
 
