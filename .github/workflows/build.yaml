@@ -1,12 +1,13 @@
 name: Build
 
+permissions:
+  contents: read
+
 on:
   push:
     branches: ["main"]
   pull_request:
     branches: ["main"]
-permissions:
-  contents: read
 
 jobs:
   check-copyright:
@@ -59,6 +60,7 @@ jobs:
         with:
           java-version: ${{ matrix.jdk }}
           distribution: "semeru"
+          cache: maven
       - name: Build with Maven Wrapper
         run: ./mvnw --batch-mode --update-snapshots --file pom.xml -Djava.version=${{ matrix.jdk }} verify
 
@@ -99,4 +101,3 @@ jobs:
         distribution: 'semeru'
     - name: Build with Gradle Wrapper
       run: ./gradlew clean build -Pjava_version=${{ matrix.jdk }}
-

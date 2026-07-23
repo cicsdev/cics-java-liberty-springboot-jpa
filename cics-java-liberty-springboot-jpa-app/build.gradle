@@ -14,7 +14,8 @@ version = '1.0.0'
 // ============================================================================
 // Java Configuration
 // ============================================================================
-java {
+java
+{
     toolchain
     {
         languageVersion = JavaLanguageVersion.of(java_version)
@@ -41,10 +42,7 @@ eclipse
     {
         downloadJavadoc = true
     }
-    // CRITICAL: Prevent Gradle Refresh from resetting WTP context-root and web facet version.
-    // Without this, every Gradle Refresh rewrites org.eclipse.wst.common.component (context-root
-    // to '{repo}-app') and org.eclipse.wst.common.project.facet.core.xml (jst.web to 2.4),
-    // breaking the CICS Explorer SDK WTP export path (SRVE0190E at runtime).
+    // Ensures Gradle Refresh sets the WTP context-root and web facet version correctly.
     wtp
     {
         facet
@@ -62,7 +60,6 @@ repositories
 {
     mavenCentral()
 }
-
 
 dependencies
 {
