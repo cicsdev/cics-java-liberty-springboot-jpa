@@ -1,0 +1,77 @@
+plugins
+{
+	id 'org.springframework.boot' version '3.5.16'
+	id 'io.spring.dependency-management' version '1.1.7'
+	id 'java'
+	id 'eclipse'
+	id 'war'
+	id 'idea'
+}
+
+group = 'com.ibm.cicsdev.springboot'
+version = '1.0.0'
+
+// ============================================================================
+// Java Configuration
+// ============================================================================
+java {
+    toolchain
+    {
+        languageVersion = JavaLanguageVersion.of(java_version)
+    }
+}
+
+// ============================================================================
+// WAR Configuration
+// ============================================================================
+war
+{
+    archiveFileName = 'cics-java-liberty-springboot-jpa.war'
+}
+
+// Two versions of the WAR would be built, one for embedding into servers like Liberty (plain)
+// and a bootWAR which can run standalone and contains all the Tomcat and Spring Boot stuff
+// we don't need bootWAR, so disable it.
+bootWar { enabled = false }
+
+// If in Eclipse, add Javadoc to the local project classpath
+eclipse
+{
+    classpath
+    {
+        downloadJavadoc = true
+    }
+    // CRITICAL: Prevent Gradle Refresh from resetting WTP context-root and web facet version.
+    // Without this, every Gradle Refresh rewrites org.eclipse.wst.common.component (context-root
+    // to '{repo}-app') and org.eclipse.wst.common.project.facet.core.xml (jst.web to 2.4),
+    // breaking the CICS Explorer SDK WTP export path (SRVE0190E at runtime).
+    wtp
+    {
+        facet
+        {
+            facet name: 'jst.web', version: '6.0'
+        }
+        component
+        {
+            contextPath = 'cics-java-liberty-springboot-jpa'
+        }
+    }
+}
+
+repositories
+{
+    mavenCentral()
+}
+
+
+dependencies
+{
+    // Spring Boot web support
+    implementation("org.springframework.boot:spring-boot-starter-web")
+
+    // Don't include TomCat in the runtime build
+    providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
+
+    // Spring JPA Support
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+}
