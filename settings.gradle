@@ -1,1 +1,19 @@
-rootProject.name = 'com.ibm.cicsdev.springboot.jpa'
+// ============================================================================
+// Toolchain Configuration
+// ============================================================================
+// Configure toolchain resolver for auto-provisioning of JDKs
+plugins
+{
+    id 'org.gradle.toolchains.foojay-resolver-convention' version '0.8.0'
+}
+
+// ============================================================================
+// Root Project Configuration
+// ============================================================================
+rootProject.name = 'cics-java-liberty-springboot-jpa'
+
+// ============================================================================
+// Subprojects
+// ============================================================================
+include(':cics-java-liberty-springboot-jpa-app')
+include(':cics-java-liberty-springboot-jpa-cicsbundle')
