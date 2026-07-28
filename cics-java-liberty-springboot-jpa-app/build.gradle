@@ -1,11 +1,11 @@
 plugins
 {
-	id 'org.springframework.boot' version '3.5.16'
-	id 'io.spring.dependency-management' version '1.1.7'
-	id 'java'
-	id 'eclipse'
-	id 'war'
-	id 'idea'
+    id 'org.springframework.boot' version '3.5.16'
+    id 'io.spring.dependency-management' version '1.1.7'
+    id 'java'
+    id 'eclipse'
+    id 'war'
+    id 'idea'
 }
 
 group = 'com.ibm.cicsdev.springboot'
@@ -35,14 +35,13 @@ war
 // we don't need bootWAR, so disable it.
 bootWar { enabled = false }
 
-// If in Eclipse, add Javadoc to the local project classpath
+// Eclipse: add Javadoc to classpath and pin WTP settings so Gradle Refresh doesn't reset them
 eclipse
 {
     classpath
     {
         downloadJavadoc = true
     }
-    // Ensures Gradle Refresh sets the WTP context-root and web facet version correctly.
     wtp
     {
         facet
