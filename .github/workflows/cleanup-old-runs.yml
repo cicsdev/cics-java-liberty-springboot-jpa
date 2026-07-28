@@ -1,9 +1,12 @@
-name: Cleanup old workflow runs
+name: Cleanup Old Workflow Runs
+
+permissions:
+  contents: read
 
 on:
   schedule:
-    - cron: '0 0 * * 0'  # Run weekly on Sunday at midnight UTC
-  workflow_dispatch:      # Allow manual triggering
+    - cron: '0 0 * * 0'  # Run weekly on Sunday
+  workflow_dispatch:  # Allow manual trigger
 
 jobs:
   cleanup:
