@@ -1,5 +1,5 @@
 # cics-java-liberty-springboot-jpa
-[![Build](https://github.com/cicsdev/cics-java-liberty-springboot-jpa/actions/workflows/build.yaml/badge.svg)](https://github.com/cicsdev/cics-java-liberty-springboot-jpa/actions/workflows/build.yaml)
+[![Build](https://github.com/cicsdev/cics-java-liberty-springboot-jpa/actions/workflows/build.yaml/badge.svg?branch=main)](https://github.com/cicsdev/cics-java-liberty-springboot-jpa/actions/workflows/build.yaml)
 [![License](https://img.shields.io/badge/License-EPL%202.0-green.svg)](https://www.eclipse.org/legal/epl-2.0/)
 
 ## Overview
@@ -20,7 +20,7 @@ This sample demonstrates a Spring Boot application that uses Spring Data JPA to 
 3. [Before You Start](#before-you-start)
 4. [Reference](#reference)
 5. [Downloading](#downloading)
-6. [Check Dependencies](#check-dependencies)
+6. [Check dependencies](#check-dependencies)
 7. [Building the Sample](#building-the-sample)
 8. [Deploying to a CICS Liberty JVM server](#deploying-to-a-cics-liberty-jvm-server)
 9. [Running the Sample](#running-the-sample)
@@ -34,7 +34,7 @@ This sample demonstrates a Spring Boot application that uses Spring Data JPA to 
 - CICS TS V6.1 or later (required for Spring Boot 3.x and Jakarta EE 10 support)
 - A configured Liberty JVM server in CICS
 - Java SE 17 or later on the workstation
-- IBM Db2 V12 or later on z/OS with the CICS DB2CONN resource configured
+- IBM Db2 V13 or later on z/OS with the CICS DB2CONN resource configured
 - An Eclipse development environment on the workstation (optional)
 - Either Gradle or Apache Maven on the workstation (optional if using Wrappers)
 
@@ -50,8 +50,8 @@ Configure the IBM Data Server Driver for JDBC and SQLJ library and a type-2 Data
 
 ```xml
 <library id="db2Type2Driver">
-    <fileset dir="/usr/lpp/db2v12/jdbc/classes" includes="db2jcc4.jar db2jcc_license_cisuz.jar"/>
-    <fileset dir="/usr/lpp/db2v12/jdbc/lib" includes="libdb2jcct2zos4_64.so"/>
+    <fileset dir="/usr/lpp/db2v13/jdbc/classes" includes="db2jcc4.jar db2jcc_license_cisuz.jar"/>
+    <fileset dir="/usr/lpp/db2v13/jdbc/lib" includes="libdb2jcct2zos4_64.so"/>
 </library>
 
 <dataSource id="db2Type2" jndiName="jdbc/jpaDataSource" transactional="false"
@@ -73,8 +73,8 @@ Before deploying, ensure your CICS region has:
 - **JCL** — add these DD statements to your CICS region JCL to provide the Db2 load libraries:
 
 ```jcl
-//         DD DSN=SYS2.DB2.V12.SDSNLOAD,DISP=SHR
-//         DD DSN=SYS2.DB2.V12.SDSNLOD2,DISP=SHR
+//         DD DSN=SYS2.DB2.V13.SDSNLOAD,DISP=SHR
+//         DD DSN=SYS2.DB2.V13.SDSNLOD2,DISP=SHR
 ```
 
 ### 3. Liberty Server Features

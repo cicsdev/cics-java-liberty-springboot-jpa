@@ -11,24 +11,29 @@
     <!-- JDBC DataSource for Db2 via CICS type-2 connection.
          type="javax.sql.DataSource" forces Liberty to use the non-XA DataSource interface.
          Without this, Liberty defaults to DB2XADataSource which is not supported with driverType="2".
-         transactional="false" disables Liberty connection pooling transaction enlistment. -->
+         transactional="false" disables Liberty connection pooling transaction enlistment.
+         Update fileset paths and currentSchema to match your Db2 installation. -->
     <dataSource id="t2" jndiName="jdbc/jpaDataSource" transactional="false" type="javax.sql.DataSource">
         <jdbcDriver>
             <library name="DB2LIB">
-                <fileset dir="/usr/lpp/db2v12/jdbc/classes" includes="db2jcc4.jar db2jcc_license_cisuz.jar"/>
-                <fileset dir="/usr/lpp/db2v12/jdbc/lib" includes="libdb2jcct2zos4_64.so"/>
+                <fileset dir="/usr/lpp/db2v13/jdbc/classes" includes="db2jcc4.jar db2jcc_license_cisuz.jar"/>
+                <fileset dir="/usr/lpp/db2v13/jdbc/lib" includes="libdb2jcct2zos4_64.so"/>
             </library>
         </jdbcDriver>
-        <properties.db2.jcc currentSchema="DSN81110" driverType="2"/>
+        <properties.db2.jcc currentSchema="YOUR_SCHEMA" driverType="2"/>
         <connectionManager agedTimeout="0"/>
     </dataSource>
-    
+
+    <!-- For direct Liberty WAR deployment only — not needed when deploying via a CICS bundle.
+         When deploying via a CICS bundle, CICS auto-injects the <application> element. -->
+    <!--
     <application location="${server.config.dir}/apps/cics-java-liberty-springboot-jpa.war" type="war">
-	  	<application-bnd>
-	  		<security-role name="cicsAllAuthenticated">
-	        	<special-subject type="ALL_AUTHENTICATED_USERS"/>
-	        </security-role>
-	    </application-bnd>
-	   </application>
-    
+        <application-bnd>
+            <security-role name="cicsAllAuthenticated">
+                <special-subject type="ALL_AUTHENTICATED_USERS"/>
+            </security-role>
+        </application-bnd>
+    </application>
+    -->
+
 </server>
