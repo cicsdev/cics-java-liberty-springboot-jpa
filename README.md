@@ -51,7 +51,24 @@ This sample demonstrates a Spring Boot application that uses Spring Data JPA to 
 
 Before building and deploying this sample, you must customize the following files with your environment-specific values.
 
-### 1. Db2 Connection Configuration
+### 1. Liberty Server Features
+
+**File:** Liberty `server.xml`
+
+```xml
+<featureManager>
+    <!-- Required for Spring Boot 4.x (Jakarta EE 11) -->
+    <feature>servlet-6.1</feature>
+    <!-- Required for JDBC DataSource -->
+    <feature>jdbc-4.3</feature>
+</featureManager>
+```
+
+> **Note:** `servlet-6.1` requires CICS TS V6.1 or later. `cicsts:security-1.0` is auto-injected by CICS when region security is active — do not add it manually. For `jdbc-4.3`, ensure `type="javax.sql.DataSource"` is set on the `<dataSource>` element when using a type-2 driver.
+
+A complete template `server.xml` is provided in [`etc/config/liberty/server.xml`](./etc/config/liberty/server.xml).
+
+### 2. Db2 Connection Configuration
 
 **File:** Liberty `server.xml`
 
@@ -73,7 +90,7 @@ Configure the IBM Data Server Driver for JDBC and SQLJ library and a type-2 Data
 
 Update the `fileset dir` paths to match your Db2 JDBC installation on z/OS, and set `currentSchema` to your Db2 schema name.
 
-### 2. CICS Region Configuration
+### 3. CICS Region Configuration
 
 Before deploying, ensure your CICS region has:
 
@@ -85,23 +102,6 @@ Before deploying, ensure your CICS region has:
 //         DD DSN=SYS2.DB2.V13.SDSNLOAD,DISP=SHR
 //         DD DSN=SYS2.DB2.V13.SDSNLOD2,DISP=SHR
 ```
-
-### 3. Liberty Server Features
-
-**File:** Liberty `server.xml`
-
-```xml
-<featureManager>
-    <!-- Required for Spring Boot 4.x (Jakarta EE 11) -->
-    <feature>servlet-6.1</feature>
-    <!-- Required for JDBC DataSource -->
-    <feature>jdbc-4.3</feature>
-</featureManager>
-```
-
-> **Note:** `servlet-6.1` requires CICS TS V6.1 or later. `cicsts:security-1.0` is auto-injected by CICS when region security is active — do not add it manually. For `jdbc-4.3`, ensure `type="javax.sql.DataSource"` is set on the `<dataSource>` element when using a type-2 driver.
-
-A complete template `server.xml` is provided in [`etc/config/liberty/server.xml`](./etc/config/liberty/server.xml).
 
 ## Reference
 
