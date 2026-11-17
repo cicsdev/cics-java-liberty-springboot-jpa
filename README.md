@@ -1,6 +1,15 @@
 # cics-java-liberty-springboot-jpa
-[![Build](https://github.com/cicsdev/cics-java-liberty-springboot-jpa/actions/workflows/build.yaml/badge.svg?branch=springboot%2Fv3)](https://github.com/cicsdev/cics-java-liberty-springboot-jpa/actions/workflows/build.yaml)
+[![Build](https://github.com/cicsdev/cics-java-liberty-springboot-jpa/actions/workflows/build.yaml/badge.svg?branch=springboot%2Fv4)](https://github.com/cicsdev/cics-java-liberty-springboot-jpa/actions/workflows/build.yaml)
 [![License](https://img.shields.io/badge/License-EPL%202.0-green.svg)](https://www.eclipse.org/legal/epl-2.0/)
+
+> **Version note:** This branch targets Spring Boot 4.x (Jakarta EE 11, Java 21+).
+> For Spring Boot 3.x see the [springboot/v3](../../tree/springboot/v3) branch.
+
+> **Pre-publish action required:**
+> **CICS Explorer SDK classpath entry** in
+> `cics-java-liberty-springboot-jpa-app/.classpath` references
+> `JE.JEE_V11_R0` (Jakarta EE 11). Verify the entry resolves in your installed
+> CICS Explorer SDK, then remove this notice.
 
 ## Overview
 
@@ -10,7 +19,7 @@ This sample demonstrates a Spring Boot application that uses Spring Data JPA to 
 - **Spring Data JPA**: Uses Spring Boot's auto-configuration with Hibernate and Db2
 - **JNDI DataSource lookup**: Connects to Db2 via a CICS type-2 JDBC connection configured in Liberty
 - **REST API**: CRUD operations over the `EMP` table via simple HTTP GET endpoints
-- **Jakarta EE 10**: Spring Boot 3.x with `jakarta.*` namespace and `servlet-6.0`
+- **Jakarta EE 11**: Spring Boot 4.x with `jakarta.*` namespace and `servlet-6.1`
 - **Multi-build support**: Gradle, Maven, and Eclipse (CICS Explorer SDK) deployment paths
 
 ## Table of Contents
@@ -31,9 +40,9 @@ This sample demonstrates a Spring Boot application that uses Spring Data JPA to 
 
 ## Prerequisites
 
-- CICS TS V6.1 or later (required for Spring Boot 3.x and Jakarta EE 10 support)
+- CICS TS V6.1 or later (required for Spring Boot 4.x and Jakarta EE 11 support)
 - A configured Liberty JVM server in CICS
-- Java SE 17 or later on the workstation
+- Java SE 21 or later on the workstation
 - IBM Db2 V13 or later on z/OS with the CICS DB2CONN resource configured
 - An Eclipse development environment on the workstation (optional)
 - Either Gradle or Apache Maven on the workstation (optional if using Wrappers)
@@ -83,14 +92,14 @@ Before deploying, ensure your CICS region has:
 
 ```xml
 <featureManager>
-    <!-- Required for Spring Boot 3.x (Jakarta EE 10) -->
-    <feature>servlet-6.0</feature>
+    <!-- Required for Spring Boot 4.x (Jakarta EE 11) -->
+    <feature>servlet-6.1</feature>
     <!-- Required for JDBC DataSource -->
     <feature>jdbc-4.3</feature>
 </featureManager>
 ```
 
-> **Note:** `servlet-6.0` requires CICS TS V6.1 or later. `cicsts:security-1.0` is auto-injected by CICS when region security is active — do not add it manually. For `jdbc-4.3`, ensure `type="javax.sql.DataSource"` is set on the `<dataSource>` element when using a type-2 driver.
+> **Note:** `servlet-6.1` requires CICS TS V6.1 or later. `cicsts:security-1.0` is auto-injected by CICS when region security is active — do not add it manually. For `jdbc-4.3`, ensure `type="javax.sql.DataSource"` is set on the `<dataSource>` element when using a type-2 driver.
 
 A complete template `server.xml` is provided in [`etc/config/liberty/server.xml`](./etc/config/liberty/server.xml).
 
@@ -104,9 +113,9 @@ More information about the development of this sample can be found in the blog [
 
 **If using the command line:**
 ```shell
-git clone -b springboot/v3 https://github.com/cicsdev/cics-java-liberty-springboot-jpa
+git clone -b springboot/v4 https://github.com/cicsdev/cics-java-liberty-springboot-jpa
 ```
-Alternatively, download the sample as a [ZIP](https://github.com/cicsdev/cics-java-liberty-springboot-jpa/archive/springboot/v3.zip) and unzip onto the workstation.
+Alternatively, download the sample as a [ZIP](https://github.com/cicsdev/cics-java-liberty-springboot-jpa/archive/springboot/v4.zip) and unzip onto the workstation.
 
 **If importing into Eclipse:**
 1. In the **Git Repositories** view, right-click the repository → **Import as Project** (imports the root project)
@@ -287,11 +296,11 @@ This repository includes a pre-configured Eclipse CICS bundle project `cics-java
 ## Troubleshooting
 
 **Application fails to start — `CWWKZ0013E` or `SRVE0190E`**
-- Verify `servlet-6.0` is enabled in your Liberty `server.xml`.
-- Confirm CICS TS V6.1 or later is installed — earlier releases do not support Jakarta EE 10.
+- Verify `servlet-6.1` is enabled in your Liberty `server.xml`.
+- Confirm CICS TS V6.1 or later is installed — earlier releases do not support Jakarta EE 11.
 
 **`ClassNotFoundException` for `jakarta.persistence.*`**
-- This sample uses `jakarta.*` namespace (Spring Boot 3.x / Jakarta EE 10). Ensure you are not running against a CICS TS release older than V6.1, which uses `javax.*`.
+- This sample uses `jakarta.*` namespace (Spring Boot 4.x / Jakarta EE 11). Ensure you are not running against a CICS TS release older than V6.1, which uses `javax.*`.
 
 **`HibernateException` or DataSource lookup failure**
 - Verify the `<dataSource>` JNDI name in `server.xml` is `jdbc/jpaDataSource`.

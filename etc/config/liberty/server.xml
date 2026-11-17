@@ -2,8 +2,8 @@
 <server description="Liberty server for CICS Spring Boot JPA sample">
 
     <featureManager>
-        <!-- Required for Spring Boot 3.x (Jakarta EE 10) -->
-        <feature>servlet-6.0</feature>
+        <!-- Required for Spring Boot 4.x and Jakarta EE 11 -->
+        <feature>servlet-6.1</feature>
         <!-- Required for JPA/JDBC support -->
         <feature>jdbc-4.3</feature>
     </featureManager>
