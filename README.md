@@ -1,5 +1,5 @@
 # cics-java-liberty-springboot-jpa
-[![Build](https://github.com/cicsdev/cics-java-liberty-springboot-jpa/actions/workflows/build.yaml/badge.svg?branch=main)](https://github.com/cicsdev/cics-java-liberty-springboot-jpa/actions/workflows/build.yaml)
+[![Build](https://github.com/cicsdev/cics-java-liberty-springboot-jpa/actions/workflows/build.yaml/badge.svg?branch=springboot%2Fv3)](https://github.com/cicsdev/cics-java-liberty-springboot-jpa/actions/workflows/build.yaml)
 [![License](https://img.shields.io/badge/License-EPL%202.0-green.svg)](https://www.eclipse.org/legal/epl-2.0/)
 
 ## Overview
@@ -104,9 +104,9 @@ More information about the development of this sample can be found in the blog [
 
 **If using the command line:**
 ```shell
-git clone https://github.com/cicsdev/cics-java-liberty-springboot-jpa
+git clone -b springboot/v3 https://github.com/cicsdev/cics-java-liberty-springboot-jpa
 ```
-Alternatively, download the sample as a [ZIP](https://github.com/cicsdev/cics-java-liberty-springboot-jpa/archive/main.zip) and unzip onto the workstation.
+Alternatively, download the sample as a [ZIP](https://github.com/cicsdev/cics-java-liberty-springboot-jpa/archive/springboot/v3.zip) and unzip onto the workstation.
 
 **If importing into Eclipse:**
 1. In the **Git Repositories** view, right-click the repository → **Import as Project** (imports the root project)
