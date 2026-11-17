@@ -85,7 +85,7 @@ public class EmployeeRestController
 	 *  
 	 */
 	@GetMapping("/listEmployee/{empno}")
-	public Optional<Emp> listEmployee(@PathVariable String empno) 
+	public Optional<Emp> listEmployee(@PathVariable("empno") String empno)
 	{
 		return employeeService.selectWhereEmpno(empno);
 	}
@@ -94,13 +94,13 @@ public class EmployeeRestController
 	 * @param firstName
 	 * @param lastName
 	 * @return a message indicating the result of adding an employee record
-	 * 
+	 *
 	 * example url http://<server>:<port>/addEmployee/Tony/Fitzgerald
-	 * 
+	 *
 	 */
 	@GetMapping("/addEmployee/{firstName}/{lastName}")
 	@ResponseBody
-	public String addEmp(@PathVariable String firstName , @PathVariable String lastName) 
+	public String addEmp(@PathVariable("firstName") String firstName, @PathVariable("lastName") String lastName)
 	{
 		String result = employeeService.addEmployee(firstName,lastName);
 		return result;
@@ -109,13 +109,13 @@ public class EmployeeRestController
 	/**
 	 * @param empNo
 	 * @return a message indicating the result of deleting an employee record
-	 * 
+	 *
 	 *  example url http://<server>:<port>/deleteEmployee/368620
-	 *  
+	 *
 	 */
 	@GetMapping("/deleteEmployee/{empNo}")
 	@ResponseBody
-	public String delEmployee(@PathVariable String empNo) 
+	public String delEmployee(@PathVariable("empNo") String empNo)
 	{
 		String result = employeeService.deleteEmployee(empNo);
 		return result;
@@ -125,13 +125,13 @@ public class EmployeeRestController
 	 * @param empNo
 	 * @param newSalary
 	 * @return a message indicating the result of updating an employee record
-	 * 
+	 *
 	 * example url http://<server>:<port>/updateEmployee/368620/33333
-	 * 
+	 *
 	 */
 	@GetMapping("/updateEmployee/{empNo}/{newSalary}")
 	@ResponseBody
-	public String updateEmp(@PathVariable String empNo, @PathVariable long newSalary) 
+	public String updateEmp(@PathVariable("empNo") String empNo, @PathVariable("newSalary") long newSalary)
 	{
 		String result = employeeService.updateEmployee(empNo, newSalary);
 		return result;
