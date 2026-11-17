@@ -25,6 +25,7 @@ import java.util.Optional;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.SpringBootVersion;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -56,6 +57,7 @@ public class EmployeeRestController
 		String myDateString = sdf.format(myDate);		
 		
 		return "<h1>Spring Boot JPA Employee REST sample. Date/Time: " + myDateString + "</h1>"
+		+ "<h3>Spring Boot version: " + SpringBootVersion.getVersion() + "</h3>"
 		+ "<h3>Usage:</h3>"
 		+ "<b>/allEmployees</b> - return a list of employees<br>"
 		+ "<b>/listEmployee/{empno}</b> - list employee records for the employee number provided <br>"
