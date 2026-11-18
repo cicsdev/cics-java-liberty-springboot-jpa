@@ -30,6 +30,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.util.HtmlUtils;
 
 /**
  * REST controller used to direct incoming requests to the correct business service.
@@ -105,7 +106,7 @@ public class EmployeeRestController
 	public String addEmp(@PathVariable("firstName") String firstName, @PathVariable("lastName") String lastName)
 	{
 		String result = employeeService.addEmployee(firstName,lastName);
-		return result;
+		return HtmlUtils.htmlEscape(result);
 	}
 	
 	/**
@@ -120,7 +121,7 @@ public class EmployeeRestController
 	public String delEmployee(@PathVariable("empNo") String empNo)
 	{
 		String result = employeeService.deleteEmployee(empNo);
-		return result;
+		return HtmlUtils.htmlEscape(result);
 	}
 	
 	/**
@@ -136,7 +137,7 @@ public class EmployeeRestController
 	public String updateEmp(@PathVariable("empNo") String empNo, @PathVariable("newSalary") long newSalary)
 	{
 		String result = employeeService.updateEmployee(empNo, newSalary);
-		return result;
+		return HtmlUtils.htmlEscape(result);
 	}
 	
 		
